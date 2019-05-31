@@ -28,4 +28,4 @@ app.use(express.static(DIST_FOLDER));
 app.listen(PORT, () => {
     console.log('PORT ', PORT);
     console.log('SERVER LISTENING');
-});
+}); 
