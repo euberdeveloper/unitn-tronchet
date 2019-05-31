@@ -1,0 +1,28 @@
+{
+  "name": "unitn-tronchet",
+  "version": "1.0.0",
+  "description": "Site to simulate teoretich part of unitn informatica course 'Linguaggi di programmazione - modulo 2'",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/euberdeveloper/unitn-tronchet.git"
+  },
+  "author": "Eugenio Vinicio Berretta",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/euberdeveloper/unitn-tronchet/issues"
+  },
+  "homepage": "https://github.com/euberdeveloper/unitn-tronchet#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "compression": "^1.7.4",
+    "connect-history-api-fallback": "^1.6.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "helmet": "^3.18.0",
+    "morgan": "^1.9.1"
+  }
+}
