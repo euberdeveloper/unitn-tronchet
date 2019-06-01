@@ -1,8 +1,8 @@
 import { Exam } from '../types/exam.interface';
 
 const EXAM: Exam = {
-    name: 'Esame 1',
-    id: 'esame-1',
+    name: 'Esame - 06/2005',
+    id: 'esame_2005-06',
     exercises: [
         {
             code: `class DemoAssert {

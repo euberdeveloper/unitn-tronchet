@@ -316,8 +316,8 @@ const store = new Vuex.Store<StoreStatus>({
       commit('setInterval', null);
     },
     // Update State Bar
-    updateStateBarOnTime: ({ getters, dispatch }) => {
-      const perc = getters.timeProgress;
+    updateStateBarOnTime: ({ state, dispatch }) => {
+      const perc = (state.test.timer.time / state.test.timer.duration) * 100;
       dispatch('setStateBarValue', perc);
       switch (perc) {
         case 0:
@@ -334,8 +334,8 @@ const store = new Vuex.Store<StoreStatus>({
           break;
       }
     },
-    updateStateBarOnScore: ({ getters, dispatch }) => {
-      const perc = getters.scoreProgress;
+    updateStateBarOnScore: ({ state, getters, dispatch }) => {
+      const perc = (state.test.valutation.score / getters.totalScore) * 100;
       dispatch('setStateBarValue', perc);
       switch (getters.outcome) {
         case Outcome.INDECENTE:

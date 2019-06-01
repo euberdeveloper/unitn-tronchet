@@ -1,8 +1,8 @@
 import { Exam } from '../types/exam.interface';
 
 const EXAM: Exam = {
-    name: 'Esame 2',
-    id: 'esame-2',
+    name: 'Esame - 07/2005',
+    id: 'esame_2005-07',
     exercises: [
         {
             code: `package uno;
