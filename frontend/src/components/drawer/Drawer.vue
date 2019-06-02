@@ -1,5 +1,5 @@
 <template>
-  <v-navigation-drawer v-model="show" clipped fixed app>
+  <v-navigation-drawer class="pb-3" v-model="show" clipped fixed app>
     <v-list dense>
 
       <template v-for="item in items">

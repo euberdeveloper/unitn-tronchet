@@ -11,6 +11,8 @@ import Esame_2016_02 from './esame_2016-02';
 import Esame_2017_06 from './esame_2017-06';
 import Esame_2017_07 from './esame_2017-07';
 import Esame_2018_06 from './esame_2018-06';
+import Esame_2018_07 from './esame_2018-07';
+import Esame_2018_09 from './esame_2018-09';
 
 const EXAMS: Exam[] = [
     Esame_2005_06,
@@ -23,7 +25,9 @@ const EXAMS: Exam[] = [
     Esame_2016_02,
     Esame_2017_06,
     Esame_2017_07,
-    Esame_2018_06
+    Esame_2018_06,
+    Esame_2018_07,
+    Esame_2018_09
 ];
 
 export default EXAMS;
