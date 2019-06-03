@@ -1,11 +1,17 @@
 <template>
-  <app-exam :exam="exam"/>
+    <app-exam :exam="exam" :show="show" :type="type" :next="next" @hide="show = false"/>
 </template>
 
 <script lang="ts">
 import { Component, Vue, Prop } from 'vue-property-decorator';
+import { ConfirmDialogType } from '../components/confirm-dialog/ConfirmDialog.enum';
 
 import AppExam from '@/components/exam/Exam.vue';
+
+Component.registerHooks([
+  'beforeRouteLeave',
+  'beforeRouteUpdate'
+]);
 
 @Component({
   components: {
@@ -15,5 +21,26 @@ import AppExam from '@/components/exam/Exam.vue';
 export default class Exam extends Vue {
   @Prop({ type: String, required: true })
   exam!: string;
+
+  show = false;
+  // tslint:disable-next-line:no-empty
+  next = (answer: boolean) => {};
+
+  get type(): ConfirmDialogType {
+    return ConfirmDialogType.EXIT;
+  }
+
+  beforeRouteLeave(to, from, next) {
+    this.exit(next);
+  }
+
+  beforeRouteUpdate(to, from, next) {
+    this.exit(next);
+  }
+
+  exit(next: (answer: boolean) => void): void {
+    this.show = true;
+    this.next = next;
+  }
 }
 </script>

@@ -1,8 +1,6 @@
 import Vue from 'vue';
 import Router from 'vue-router';
 
-import Component from 'vue-class-component';
-
 import Exam from './views/ExamView.vue';
 import Login from './views/LoginView.vue';
 import NotFound from './views/NotFound.vue';
