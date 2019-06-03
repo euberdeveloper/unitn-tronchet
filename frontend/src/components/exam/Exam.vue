@@ -31,6 +31,7 @@ export default class AppExam extends Vue {
   created() {
     this.$store.dispatch('hideFooter');
   }
+
 }
 </script>
 

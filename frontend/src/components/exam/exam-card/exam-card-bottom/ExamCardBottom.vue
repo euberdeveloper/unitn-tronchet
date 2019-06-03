@@ -1,33 +1,37 @@
 <template>
   <div>
-    <v-bottom-nav v-if="!isFinished || !showScore" class="custom-button" color="primary" :value="true" absolute dark>
-      <v-btn color="white" :disabled="disableBack" @click="back" flat>
-        <span>Back</span>
-        <v-icon>chevron_left</v-icon>
-      </v-btn>
+    <app-confirm-dialog v-slot="{on}" :callback="confirmCallback" :type="confirmType">
 
-      <v-btn color="white" @click="refresh" flat>
-        <span>Refresh</span>
-        <v-icon>refresh</v-icon>
-      </v-btn>
+      <v-bottom-nav v-show="!isFinished || !showScore" class="custom-button" color="primary" :value="true" absolute dark>
+        <v-btn color="white" :disabled="disableBack" @click="back" flat>
+          <span>Back</span>
+          <v-icon>chevron_left</v-icon>
+        </v-btn>
 
-      <v-btn color="white" :disabled="isFinished" @click="finish" flat>
-        <span>Finish</span>
-        <v-icon>done</v-icon>
-      </v-btn>
+        <v-btn color="white" @click="action = isFinished ? 'REPEAT' : 'REFRESH'" v-on="on" flat>
+          <span>Refresh</span>
+          <v-icon>refresh</v-icon>
+        </v-btn>
 
-      <v-btn color="white" :disabled="isFinished" @click="toggleTimer" flat>
-        <span>{{ toggleTimerLayout.text }}</span>
-        <v-icon>{{ toggleTimerLayout.icon }}</v-icon>
-      </v-btn>
+        <v-btn color="white" @click="action = 'FINISH'" :disabled="isFinished" v-on="on" flat>
+          <span>Finish</span>
+          <v-icon>done</v-icon>
+        </v-btn>
 
-      <v-btn color="white" :disabled="disableNext" @click="next" flat>
-        <span>Next</span>
-        <v-icon>chevron_right</v-icon>
-      </v-btn>
-    </v-bottom-nav>
+        <v-btn color="white" :disabled="isFinished" @click="toggleTimer" flat>
+          <span>{{ toggleTimerLayout.text }}</span>
+          <v-icon>{{ toggleTimerLayout.icon }}</v-icon>
+        </v-btn>
 
-    <v-btn v-else block color="primary" round large @click="refresh">RIPETI</v-btn>
+        <v-btn color="white" :disabled="disableNext" @click="next" flat>
+          <span>Next</span>
+          <v-icon>chevron_right</v-icon>
+        </v-btn>
+      </v-bottom-nav>
+
+      <v-btn v-show="isFinished && showScore" block color="primary" round large @click="action = 'REPEAT'" v-on="on">RIPETI</v-btn>
+
+    </app-confirm-dialog>
   </div>
 </template>
 
@@ -36,8 +40,15 @@ import Vue from 'vue';
 import { Component, Prop } from 'vue-property-decorator';
 import { TestStatus } from '../../../../store';
 
-@Component
+import AppConfirmDialog from '@/components/confirm-dialog/ConfirmDialog.vue';
+import { ConfirmDialogType } from '../../../confirm-dialog/ConfirmDialog.enum';
+
+@Component({
+  components: { AppConfirmDialog }
+})
 export default class AppExamCardBottom extends Vue {
+
+  action: 'REFRESH' | 'FINISH' | 'REPEAT' = 'REFRESH';
 
   get current(): number {
     return this.$store.state.test.exercise;
@@ -73,18 +84,43 @@ export default class AppExamCardBottom extends Vue {
     return this.$store.state.test.showScore;
   }
 
+  get confirmCallback(): (answer: boolean) => void {
+    switch (this.action) {
+      case 'REFRESH':
+      case 'REPEAT':
+        return this.refresh;
+      case 'FINISH':
+        return this.finish;
+    }
+  }
+
+  get confirmType(): ConfirmDialogType {
+    switch (this.action) {
+      case 'REFRESH':
+        return ConfirmDialogType.REFRESH;
+      case 'FINISH':
+        return ConfirmDialogType.FINISH;
+      case 'REPEAT':
+        return ConfirmDialogType.REPEAT;
+    }
+  }
+
   back(): void {
     if (!this.disableBack) {
       this.$store.dispatch('back');
     }
   }
 
-  refresh(): void {
-    this.$store.dispatch('refreshExam');
+  refresh(answer: boolean): void {
+    if (answer) {
+      this.$store.dispatch('refreshExam');
+    }
   }
 
-  finish(): void {
-    this.$store.dispatch('finishExam');
+  finish(answer: boolean): void {
+    if (answer) {
+      this.$store.dispatch('finishExam');
+    }
   }
 
   toggleTimer(): void {
