@@ -11,7 +11,9 @@ public class A{
     A(){
         Collection l = new LinkedList();
         Collection s = new HashSet();
-        for (int i = 0; i < 12; i++) if (i % 2 == 0) l.add(new Integer(i%3));
+        for (int i = 0; i < 12; i++)
+            if (i % 2 == 0)
+                l.add(new Integer(i%3));
         s.addAll(l);
         System.out.println(l.size()+" "+s.size());
     }

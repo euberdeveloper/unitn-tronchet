@@ -3,7 +3,7 @@
     <v-fade-transition>
       <v-sheet class="code d-flex grey--text text--lighten-3 pa-4" :color="background" @mouseenter="showCopy = true" @mouseleave="showCopy = false">
         <v-fade-transition>
-          <v-btn v-if="showCopy" flat icon class="copy" color="success lighten-3" @click="copyCode">
+          <v-btn v-if="showCopy" flat icon class="copy hidden-sm-and-down" color="success lighten-3" @click="copyCode">
             <v-icon>content_copy</v-icon>
           </v-btn>
         </v-fade-transition>
