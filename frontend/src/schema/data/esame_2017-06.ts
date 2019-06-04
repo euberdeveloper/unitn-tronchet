@@ -48,7 +48,7 @@ public class E1 {
         A1 a1=new B1();
         A1 a2=(A1)(new B1());
         B1 b1=new A1();
-        Systemm.out.println(a1.x+a2.x+b1.x);
+        System.out.println(a1.x+a2.x+b1.x);
     }
 }`,
             solution: {
@@ -59,28 +59,28 @@ public class E1 {
         },
         {
             code: `public class E6 {
-                static Collection ll = new LinkedList();
-                int x=1;
-                E6(int x){
-                    ll.add(this);
-                    ll.add(new E6A());
-                }
-                public static void main(String z[]) {
-                    new E6(3);
-                    Iterator iter = ll.iterator();
-                    while (iter.hasNext()) {
-                        ((E6)(iter.next())).f();
-                }}
-                public void f() { System.out.print(x); }
-                public static void main(String z) {
-                    new E6A();
-                    System.out.print(ll.size());
-            }}
-            class E6A extends E6 {
-                E6A(){x++;}
-                public void f() {
-                    x++; super.f(); System.out.print(2);
-            }}`,
+    static Collection ll = new LinkedList();
+    int x=1;
+    E6(int x){
+        ll.add(this);
+        ll.add(new E6A());
+    }
+    public static void main(String z[]) {
+        new E6(3);
+        Iterator iter = ll.iterator();
+        while (iter.hasNext()) {
+            ((E6)(iter.next())).f();
+    }}
+    public void f() { System.out.print(x); }
+    public static void main(String z) {
+        new E6A();
+        System.out.print(ll.size());
+}}
+class E6A extends E6 {
+    E6A(){x++;}
+    public void f() {
+        x++; super.f(); System.out.print(2);
+}}`,
             solution: ['132']
         },
         {
@@ -93,11 +93,11 @@ public class E1 {
     }
     void f() {Pippo a=new Pippo2();
     }
-    public coid finalize() { System.out.print("X"); }
+    public void finalize() { System.out.print("X"); }
     class Pippo {
         int k;
         Pippo() {k=++x;}
-        public void finalize() {Systemm.out.print(k);}
+        public void finalize() {System.out.print(k);}
     }
     class Pippo2 extends Pippo {
         Pippo2() {k=x++;}
@@ -113,7 +113,8 @@ public class E1 {
             ]
         },
         {
-            code: `public class E2 {
+            code: `import java.util.*;
+public class E2 {
     static HashSet hs=new HashSet();
     public int hashCode() {return 0;}
     public boolean equals(Object x) {
@@ -133,7 +134,8 @@ class A3 extends A2 {}`,
             solution: ['101000']
         },
         {
-            code: `public class E3 {
+            code: `import java.util.*;
+class E3 {
     static int counter=0;
     private int value=0;
     E3(){value=++counter;}
@@ -141,9 +143,9 @@ class A3 extends A2 {}`,
         return this.getClass().getName()+value+" ";}
     public void finalize(){System.out.print("F"+value);}
 }
-class G extends E3{
+public class G extends E3{
     public static void main(String d[]){
-        LinkedListList<E3> x=new LinkedList<E3>();
+        LinkedList<E3> x=new LinkedList<E3>();
         E3 a1=new G();
         G a2=new G();
         E3 a3=new E3();
@@ -153,7 +155,7 @@ class G extends E3{
         while (it.hasNext()){System.out.print(it.next());}
         System.gc();System.runFinalization();
 }}`,
-            solution: ['NomePackage.G1 NomePackage.E33F2 ']
+            solution: ['NomePackage.G1 NomePackage.E33 F2 ']
         },
         {
             code: `public class E4 {
@@ -188,7 +190,7 @@ class G extends E3{
                 solution: true
             },
             {
-                question: 'L\'esistenza di un metodo f(int x) in una classe e di uno f(String s) in una sua sottoclasse è un esempio di overloading',
+                question: 'L\'esistenza di un metodo f(int x) in una classe e di uno f(String s) in una sua sottoclasse è un esempio di overloading.',
                 solution: true
             },
             {

@@ -40,12 +40,12 @@ public class B {
             count++;
         }
         System.out.println(count);
-        public static void main(String[] a) {
-            new B();
-            new B(); }
-        public static void main(String a) {
-            new B();
-        }
+    }
+    public static void main(String[] a) {
+        new B();
+        new B(); }
+    public static void main(String a) {
+        new B();
     }
 }`,
             solution: {
@@ -55,7 +55,7 @@ public class B {
             }
         },
         {
-            code: `class C {
+            code: `public class C {
 public static int x;
 C(int s) {x=s;}
 void f() {System.out.print(x);}
@@ -68,7 +68,7 @@ public static void main(String a[]){
             solution: ['11']
         },
         {
-            code: `class E {
+            code: `public class E {
 static int s=0;
 E(int i){s=i;}
 public static void main(String[] args) {
@@ -115,7 +115,7 @@ int main() {
         return copia;
     }
     public boolean equals(Object x) {
-        if (! (x instance of G)) return false;
+        if (! (x instanceof G)) return false;
         return k==((G)x).k;
     }
     public static void main(String[] args) {
@@ -160,15 +160,40 @@ public static void main(String arg[]) {
         a5=new D();     a5.f();
         System.gc();    System.runFinalization();
 }}`,
-            solution: ['S235']
+            solution: [
+                'S235',
+                'S253',
+                'S325',
+                'S352',
+                'S523',
+                'S532',
+                '2S35',
+                '2S53',
+                '23S5',
+                '235S',
+                '25S3',
+                '253S',
+                '3S25',
+                '3S52',
+                '32S5',
+                '325S',
+                '35S2',
+                '352S',
+                '5S23',
+                '5S32',
+                '52S3',
+                '523S',
+                '53S2',
+                '532S'
+            ]
         },
         [
             {
-                question: 'Se A è padre di B la scrittura B a=(B)(new A()); genera errore a compile time.',
+                question: 'Se A è padre di B la scrittura B a=(B)(new A()); genera errore a compiletime.',
                 solution: false
             },
             {
-                question: 'Se B estende A la scrittura B a=new A(); genera errore a compile time.',
+                question: 'Se B estende A la scrittura B a=new A(); genera errore a compiletime.',
                 solution: true
             },
             {

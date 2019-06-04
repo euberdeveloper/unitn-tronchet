@@ -57,24 +57,24 @@ public class B extends esame.A{
             }
         },
         {
-            code: `#include <stdlib.h>
-            #include <iostream.h>
-            Using namespace std;
-            void cambia( int m, int n[7]) {
-                (*(n+m))--; m++; n--;
-            }
-            int main(){
-                int vet[] = {1,2,3,4,5};
-                cambia(vet[4],vet-1);
-                cambia(0,&vet[4]);
-                int i=0;
-                for (i=0;i<5;i++) cout << vet[i];
-                return 0;
-            }`,
+            code: `#include <cstdlib>
+#include <iostream>
+using namespace std;
+void cambia( int m, int n[7]) {
+    (*(n+m))--; m++; n--;
+}
+int main(){
+    int vet[] = {1,2,3,4,5};
+    cambia(vet[4],vet-1);
+    cambia(0,&vet[4]);
+    int i=0;
+    for (i=0;i<5;i++) cout << vet[i];
+    return 0;
+}`,
             solution: ['12343']
         },
         {
-            code: `class A{
+            code: `public class A{
     public static int x;
     A(int s) {x=s;}
     void f() {System.out.print(x);}
@@ -88,7 +88,7 @@ public class B extends esame.A{
             solution: ['44']
         },
         {
-            code: `class B {
+            code: `public class B {
     static int s=0;
     B(int i){s=i;}
     public static void main(String[] args) {

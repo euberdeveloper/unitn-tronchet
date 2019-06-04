@@ -79,9 +79,10 @@ int main() {
             solution: ['35814']
         },
         {
-            code: `public class Sette {
+            code: `import java.util.*;
+public class Sette {
     Sette(){
-        List<String> a = new Arraylist<String>();
+        List<String> a = new ArrayList<String>();
         List<String> b = new HashSet<String>();
         for (int k=0; k<10;k++) {
             String s="A"+(k%3);
@@ -95,7 +96,7 @@ int main() {
 }`,
             solution: {
                 type: 'COMPILETIME',
-                row: 4,
+                row: 5,
                 cause: 'List non è superclasse di HashSet'
             }
         },

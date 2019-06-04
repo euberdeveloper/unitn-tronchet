@@ -21,7 +21,7 @@ int main() {
     g(x, y);
     cout<<x[0]<<" "<<x[1]<<" "<<y;
     return 0;   }`,
-            solution: ['CE1']
+            solution: ['C E 1']
         },
         {
             code: `public class F{
@@ -66,7 +66,7 @@ public static void main(String arg[]) {
             solution: ['F']
         },
         {
-            code: `class C{
+            code: `public class C{
 public static int x;
 C(int s) {x=s;}
 void f() { System.out.print(x);}
@@ -127,7 +127,7 @@ public class A {
             }
         },
         {
-            code: `class E {
+            code: `public class E {
     static int s=0;
     E(int i){s=i;}
     public static void main(String[] args) {
@@ -214,11 +214,11 @@ public class A {
                 solution: true
             },
             {
-                question: 'Se B estende A la scrittura B a=new A(); genera errore a run time.',
+                question: 'Se B estende A la scrittura B a=new A(); genera errore a runtime.',
                 solution: false
             },
             {
-                question: 'Se A è padre di B la scrittura B a=(B)(new A()); genera errore a run time.',
+                question: 'Se A è padre di B la scrittura B a=(B)(new A()); genera errore a runtime.',
                 solution: true
             }
         ]

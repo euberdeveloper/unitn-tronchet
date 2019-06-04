@@ -16,21 +16,21 @@ int main() {
     f(x);
     cout<<g();
     cout<<x;
-    return O;
+    return 0;
 }`,
             solution: ['205']
         },
         {
 code: `public class Test2 {
-    static final int MAX = 1O;
+    static final int MAX = 10;
     public static void main(String[] args) {
         A a = new A();
-        a.m1 (l) ;
+        a.m1(1) ;
         C c = new C();
         c.m2(2);
     }
 }
-interface Il {
+interface I1 {
     public int m1(int x);
 }
 interface I2 {
@@ -55,7 +55,7 @@ class C extends B implements I2 {}`,
         {
             code: `public class Test3 {
     public static void main(String[] args) {
-        B b1=newB(newA());b1.m(3);
+        B b1=new B(new A()); b1.m(3);
         B b2 = new B(); b2.m(5);
         System.out.println(b2);
     }
@@ -74,7 +74,7 @@ class B {
     public String toString() { return a.toString(); }
 }`,
             solution: {
-                type: 'COMPILETIME',
+                type: 'RUNTIME',
                 row: 18,
                 cause: 'NullPointerException'
             }
@@ -97,7 +97,7 @@ class Z {
         {
             code: `public class Test5 {
     public static void main(String[] args) {
-        A a new A( ); a .m();
+        A a = new A(); a .m();
         B b = new C(); b.m1(1); b.m2(2);
     }
 }
@@ -124,11 +124,12 @@ class C extends A,B {}`,
             }
         },
         {
-            code: `public class Test6 {
+            code: `import java.util.*;
+public class Test6 {
     public static void main(String[] args) {
         A[] a = new A[4];
-        for (int i = O; i < a.length; i++) {
-        if (i%2 != O) a[i]= new A(i);
+        for (int i = 0; i < a.length; i++) {
+        if (i%2 != 0) a[i]= new A(i);
         else a[i]= new B(i);
         }
         List<A> l = new ArrayList<>(Arrays.asList(a));
@@ -137,13 +138,13 @@ class C extends A,B {}`,
 }
 class A {
     int x;
-    A(int x) { this.x = x + l; }
+    A(int x) { this.x = x + 1; }
     public int m(int z) { return x + z; }
 }
 class B extends A {
-    B(int x) { super(x); this.x x + 2; }
+    B(int x) { super(x); this.x = x + 2; }
 }`,
-            solution: ['7799']
+            solution: ['7 7 9 9 ']
         },
         {
             code: `public class Test7 {
@@ -167,7 +168,7 @@ class B extends A {
     B(Z z) {this.z = z; val++; }
     int m(int x) { return x * val + 1; }
 }`,
-            solution: ['6 13 25']
+            solution: ['6 15 25']
         },
         {
             code: `public class Test8 {
@@ -188,11 +189,11 @@ class A {
         [
             {
                 question: 'In Java esiste ereditarietà singola: quindi, un tipo interfaccia può ereditare da un solo tipo interfaccia.',
-                solution: true
+                solution: false
             },
             {
                 question: 'Le variabili dichiarate static sono modificabili anche da metodi private.',
-                solution: false
+                solution: true
             },
             {
                 question: 'Un metodo generico è un qualsiasi metodo che contiene parametri di tipo Object nella propria definizione.',
@@ -200,19 +201,19 @@ class A {
             },
             {
                 question: 'Sia data una classe Java che contiene un metodo m(). Una sottoclasse B di A può ridefinire m() una sola volta mediante override e un numero arbitrario di volte mediante overload.',
-                solution: false
+                solution: true
             },
             {
                 question: 'Una classe Java definita come abstract può essere usata all\'interno di gerarchie di classi con ereditarietà multipla.',
-                solution: true
+                solution: false
             },
             {
                 question: 'In Java, se B è una sottoclasse di A, l\'istruzione B a = new A(); genera errore a runtime.',
-                solution: true
+                solution: false
             },
             {
                 question: 'Si consideri un attributo x dichiarato come protected nella classe C del package Pl; x non è visibile da una classe D appartenente a un package P2, a meno che D non erediti da c.',
-                solution: false
+                solution: true
             },
             {
                 question: 'In Java la parola chiave this serve a identificare un particolare elemento all\'interno di un array.',

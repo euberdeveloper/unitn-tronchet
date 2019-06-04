@@ -54,7 +54,8 @@ public class Uno {
             solution: ['KLK2']
         },
         {
-            code: `public class Due {
+            code: `import java.util.*;
+public class Due {
     static Collection<Due> s=new HashSet<Due>();
     int k,j;
     Due(int k, int j) {this.k=k; this.j=j;}
@@ -75,7 +76,8 @@ public class Uno {
             solution: ['21 20 1']
         },
         {
-            code: `public class Due {
+            code: `import java.util.*;
+public class Due {
     static Collection<Due> s=new HashSet<Due>();
     static int k,j;
     Due(int k, int j) {this.k=k; this.j=j;}
@@ -89,10 +91,11 @@ public class Uno {
         System.out.print(s.size());
         for (Due x:s){System.out.print(x.k+" "+x.j);}
 } }`,
-            solution: ['41 20 12 11 0']
+            solution: ['41 01 01 01 0']// ['41 20 12 11 0']
         },
         {
-            code: `public class Due {
+            code: `import java.util.*;
+public class Due {
     Collection<Due> s=new HashSet<Due>();
     static int k,j;
     Due(int k, int j) {this.k=k; this.j=j;}
@@ -108,7 +111,7 @@ public class Uno {
 } }`,
             solution: {
                 type: 'COMPILETIME',
-                row: 10,
+                row: 11,
                 cause: 'Non si possono chiamare attributi di istanza da metodi statici'
             }
         },
@@ -134,7 +137,7 @@ public class Uno {
 } }`,
             solution: {
                 type: 'COMPILETIME',
-                row: 6,
+                row: 7,
                 cause: 'Costruttore della classe Padre non chiamato'
             }
         },

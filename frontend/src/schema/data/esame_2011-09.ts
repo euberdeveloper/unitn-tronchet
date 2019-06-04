@@ -32,7 +32,7 @@ const EXAM: Exam = {
             solution: ['X']
         },
         {
-            code: `class A {
+            code: `public class A {
     A(int x) {System.out.print("A");}
     A() {System.out.print("S");}
     public void finalize() {System.out.print("U");}
@@ -58,7 +58,7 @@ public static void main(String[] args) {
     B b1=new B(3);
     B b2=new B(3);
     B b3=new B(1);
-    if (b1.equals(b2)) System.out.print("3"),
+    if (b1.equals(b2)) System.out.print("3");
         else System.out.print("1");
     if (b1.s==b3.s) System.out.print("3");
         else System.out.print("1");
@@ -128,7 +128,7 @@ public class B extends C{
             solution: ['P\n']
         },
         {
-            code: `class B {
+            code: `public class B {
     public static void main(String args[]) {
         int i,j,k,l=8;
         k = l++;
@@ -176,7 +176,7 @@ class A extends B{
             },
             {
                 question: 'Due oggetti per cui equals è vera possono avere variabili pubbliche con valori differenti.',
-                solution: false
+                solution: true
             },
             {
                 question: 'Due oggetti per cui equals è vera sono sempre identici.',

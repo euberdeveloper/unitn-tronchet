@@ -5,7 +5,7 @@ const EXAM: Exam = {
     id: 'esame_2011-06',
     exercises: [
         {
-            code: `class E {
+            code: `public class E {
 static int s=0;
 E(int i) {s=i;}
 public static void main(String[] args) {
@@ -14,7 +14,7 @@ public static void main(String[] args) {
     E b3=new E(1);
     if (b1.equals(b2)) System.out.print("K");
         else System.out.print("I");
-    if (b1.s==b3.s)) System.out.print("A");
+    if (b1.s==b3.s) System.out.print("A");
         else System.out.print("D");
 }   }`,
             solution: ['IA']
@@ -36,7 +36,7 @@ int main(){
     g(x, y);
     cout<<x[0]<<" "<<x[1]<<" "<<y;
     return 0;   }`,
-            solution: ['QS1']
+            solution: ['Q S 1']
         },
         {
             code: `public class G implements Cloneable{
@@ -57,7 +57,7 @@ int main(){
     }
     public static void main(String[] args) {
         G b= new G();
-        G c=b.close();
+        G c=b.clone();
         G d=new G();
         if (b.equals(c)) System.out.print("A");
         if (c.equals(d)) System.out.print("B");
@@ -116,7 +116,7 @@ public class B {
             }
         },
         {
-            code: `class C{
+            code: `public class C{
 public static int x;
 C(int s) {x=s;}
 void f() {System.out.print(x);}
@@ -189,11 +189,11 @@ public static void main(String arg[]) {
         },
         [
             {
-                question: 'Se B estende A la scrittura B a=new A(); genera errore a compile time',
+                question: 'Se B estende A la scrittura B a=new A(); genera errore a compiletime.',
                 solution: true
             },
             {
-                question: 'Se A + padre di B la scrittura B a=(B)(new A()); genera errore a compile time',
+                question: 'Se A è padre di B la scrittura B a=(B)(new A()); genera errore a compiletime.',
                 solution: false
             },
             {
@@ -213,11 +213,11 @@ public static void main(String arg[]) {
                 solution: true
             },
             {
-                question: 'Il main può accedere a qualunque variabile di istanza della clase in cui è contenuto.',
+                question: 'Il main può accedere a qualunque variabile di istanza della classe in cui è contenuto.',
                 solution: false
             },
             {
-                question: 'Il costruttore di una classe può essere visibile all\'esterno della classe stessa',
+                question: 'Il costruttore di una classe può essere visibile all\'esterno della classe stessa.',
                 solution: true
             }
         ],

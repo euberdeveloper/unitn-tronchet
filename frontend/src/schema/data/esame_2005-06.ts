@@ -5,7 +5,7 @@ const EXAM: Exam = {
     id: 'esame_2005-06',
     exercises: [
         {
-            code: `class DemoAssert {
+            code: `public class DemoAssert {
     int x=5;
     public void stampaInteroPositivo(int i) {
         assert i >= 0 : stampaErroreAssert();
@@ -46,7 +46,7 @@ const EXAM: Exam = {
 }`,
             solution: {
                 type: 'COMPILETIME',
-                row: 11,
+                row: 12,
                 cause: 'Le variabili d\'istanza non possono essere usate da metodi statici'
             }
         },
@@ -87,7 +87,7 @@ int main(){
             code: `package uno;
 public class A {
     void f(int k) {
-        stem.out.print(k*3);
+        System.out.print(k*3);
     }
     public static void main (String args[]){
         Object z=null;

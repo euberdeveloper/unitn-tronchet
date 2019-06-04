@@ -116,7 +116,7 @@ public class A{
 }`,
             solution: {
                 type: 'COMPILETIME',
-                row: 4,
+                row: 8,
                 cause: 'I metodi statici non possono chiamare metodi di istanza'
             }
         },
@@ -145,7 +145,7 @@ class C {
         System.out.print("+"+name);
     }
     protected void finalize() {
-        stem.out.print("-"+name);
+        System.out.print("-"+name);
     }
 }`,
             solution: [
@@ -169,11 +169,11 @@ class C {
                 solution: false
             },
             {
-                question: 'Se A è padre di B la scrittura B a=new A(); genera errore a compile time',
+                question: 'Se A è padre di B la scrittura B a=new A(); genera errore a compiletime',
                 solution: true
             },
             {
-                question: 'Se A è padre di B la scrittura A a=new B(); genera errore a compile time',
+                question: 'Se A è padre di B la scrittura A a=new B(); genera errore a compiletime',
                 solution: false
             },
             {
@@ -181,7 +181,7 @@ class C {
                 solution: false
             },
             {
-                question: 'Se A è padre di B la scrittura B a=(B)(new A()); genera errore a compile time',
+                question: 'Se A è padre di B la scrittura B a=(B)(new A()); genera errore a compiletime',
                 solution: false
             },
             {

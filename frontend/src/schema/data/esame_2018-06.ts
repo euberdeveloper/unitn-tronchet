@@ -6,22 +6,22 @@ const EXAM: Exam = {
     exercises: [
         {
             code: `public class D {
-static int x=3;
-public static void main(String[] args) {
-    D a5=new D();   a5.f();
-    a5=new D();     a5.f();
-    System.gc();    System.runFinalization();
-}
-void f() {Pippo a = new Pippo2();
-}
-public void finalize() { System.out.print("X"); }
-class Pippo {
-    int k;
-    Pippo() {k=++x;}
-    public void finalize() { System.out.print(k); }
-}
-class Pippo2 extends Pippo {
-    Pippo2() {k=x++;}
+    static int x=3;
+    public static void main(String[] args) {
+        D a5=new D();   a5.f();
+        a5=new D();     a5.f();
+        System.gc();    System.runFinalization();
+    }
+    void f() {Pippo a = new Pippo2();
+    }
+    public void finalize() { System.out.print("X"); }
+    class Pippo {
+        int k;
+        Pippo() {k=++x;}
+        public void finalize() { System.out.print(k); }
+    }
+    class Pippo2 extends Pippo {
+        Pippo2() {k=x++;}
 }}`,
             solution: [
                 'X64',
@@ -33,7 +33,8 @@ class Pippo2 extends Pippo {
             ]
         },
         {
-            code: `public class Sette {
+            code: `import java.util.*;
+public class Sette {
     Sette(){
         Collection<String> a = new ArrayList<String>();
         Collection<String> b = new HashSet<String>();
@@ -50,7 +51,8 @@ class Pippo2 extends Pippo {
             solution: ['18\\n']
         },
         {
-            code: `public class Sette {
+            code: `import java.util.*;
+public class Sette {
     Sette(){
         Set<String> a = new ArrayList<String>();
         Set<String> b = new HashSet<String>();
@@ -66,7 +68,7 @@ class Pippo2 extends Pippo {
 }}`,
             solution: {
                 type: 'COMPILETIME',
-                row: 3,
+                row: 4,
                 cause: 'Set non è una superclasse di ArrayList'
             }
         },
@@ -85,7 +87,7 @@ int main() {
     for (int i=1;i<4;i++) { cout<<k[i]; }
     return 0;
 }`,
-            solution: ['1333']
+            solution: ['333']
         },
         {
             code: `public class B {

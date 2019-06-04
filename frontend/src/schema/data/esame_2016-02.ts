@@ -20,7 +20,7 @@ const EXAM: Exam = {
             solution: ['162']
         },
         {
-            code: `public class E3 {
+            code: `class E3 {
     static int counter=4;
     private int value=2;
     E3(){value=++counter;}
@@ -28,10 +28,11 @@ const EXAM: Exam = {
         return this.getClass().getName()+value+" ";}
     public void finalize(){System.out.print("F"+value);}
 }
-class G extends E3{
+public class G extends E3{
     public static void main(String d[]){
         LinkedList<E3> x=new LinkedList<E3>();
         E3 a1=new G();
+        G a2 =new G();
         E3 a3=new E3();
         x.add(a1);x.add(a3);
         a1=null; a2=null; a3=null;
@@ -42,7 +43,8 @@ class G extends E3{
             solution: ['NomePackage.G5 NomePackage.E37 F6']
         },
         {
-            code: `public class E2 {
+            code: `import java.util.*;
+public class E2 {
     static HashSet hs=new HashSet();
     public int hashCode() {return 0;}
     public boolean equals(Object x) {
@@ -126,7 +128,7 @@ int main(int argc, char** argv) {
     class Pippo {
         int k;
         Pippo() {k=++x;}
-        public void finalize() { Systemm.out.print(k); }
+        public void finalize() { System.out.print(k); }
     }
     class Pippo2 extends Pippo {
         Pippo2() {k=x++;}
@@ -142,7 +144,8 @@ int main(int argc, char** argv) {
             ]
         },
         {
-            code: `public class E6 {
+            code: `import java.util.*;
+public class E6 {
     static Collection ll = new LinkedList();
     int x=6;
     E6(){}
@@ -170,19 +173,19 @@ class EA5 extends E6 {
                 solution: false
             },
             {
-                question: 'E\' corretto scrivere Integer k=3;',
+                question: 'È corretto scrivere Integer k=3;',
                 solution: true
             },
             {
-                question: 'L\'esistenza di un metodo f(int x) e di uno f(String s) nella stessa classe è un esempio di overloading.',
+                question: 'L\' esistenza di un metodo f(int x) e di uno f(String s) nella stessa classe è un esempio di overloading.',
                 solution: true
             },
             {
-                question: 'L\'esistenza di una classe di metodo f(int x), e in una sua sottoclasse di un metodo f(float x) è un esempio di overriding.',
+                question: 'L\' esistenza di una classe di metodo f(int x), e in una sua sottoclasse di un metodo f(float x) è un esempio di overriding.',
                 solution: false
             },
             {
-                question: 'Se a.hashCode==b.hasCode, a.equals(b) deve essere vero.',
+                question: 'Se a.hashCode==b.hashCode, a.equals(b) deve essere vero.',
                 solution: false
             },
             {

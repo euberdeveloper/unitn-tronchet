@@ -21,7 +21,7 @@ public class Prova {
         while (i.hasNext()) ( (A) i.next()).printCount();
     }
 }`,
-            solution: ['1\n1\n1\n']
+            solution: ['1\\n1\\n1\\n']
         },
         {
             code: `import java.util.*;
@@ -29,7 +29,10 @@ class A {
     private static A a;
     private static int instancecount=0;
     private A() {instancecount++;}
-    static A getInstance() {if (a==null) a=new A(); return a;}
+    static A getInstance() {
+        if (a==null) a=new A();
+        return a;
+    }
     void printCount(){System.out.println(instancecount);}
 }
 public class Prova {
@@ -42,7 +45,7 @@ public class Prova {
 }`,
             solution: {
                 type: 'COMPILETIME',
-                row: 11,
+                row: 13,
                 cause: 'Il costruttore di A è privato'
             }
         },
@@ -62,7 +65,7 @@ public class B extends esame.A{
 }`,
             solution: {
                 type: 'COMPILETIME',
-                row: 10,
+                row: 11,
                 cause: 'x ha visibilità package ed appartiene ad un altro package'
             }
         },
@@ -73,7 +76,7 @@ void f(char *x, int * y) {
     x[*y]++; }
 void g(char x[], int y) {
     y--;
-    x[y]- -; }
+    x[y]--; }
 int main(){
     char x[2];
     int y;
@@ -180,11 +183,11 @@ public static void main(String s[]) {
                 solution: false
             },
             {
-                question: 'Se A è padre di B la scrittura B a=new A(); genera errore a compile time',
+                question: 'Se A è padre di B la scrittura B a=new A(); genera errore a compiletime.',
                 solution: true
             },
             {
-                question: 'Se A è padre di B la scrittura A a=(A)(new B()); genera errore a runtime',
+                question: 'Se A è padre di B la scrittura A a=(A)(new B()); genera errore a runtime.',
                 solution: false
             },
             {

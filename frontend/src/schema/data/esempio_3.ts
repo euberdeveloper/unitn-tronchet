@@ -50,7 +50,7 @@ int main(){
     int s=0;
     B(int s) {this.s=s;}
     public boolean equals(Object o) {
-        return (s==((B)0).s);
+        return (s==((B)o).s);
     }   }
 class A extends B {
     static int w=0;
@@ -68,7 +68,7 @@ public class Main {
             solution: ['BC']
         },
         {
-            code: `class B {
+            code: `public class B {
     int s=0;
     B(int i){s=i;}
     public static void main(String[] args) {
@@ -78,7 +78,7 @@ public class Main {
         if (b1.equals(b3)) System.out.print("A");
             else System.out.print("B");
         if (b2.equals(b3)) System.out.print("C");
-            else System.out.print("D");   
+            else System.out.print("D");
     }
 }`,
             solution: ['BD']
@@ -139,7 +139,7 @@ public class Main {
         MAIN--;
     }
     public static void main(String[] args) {
-        Main mainN=new Main();
+        Main maiN=new Main();
         maiN.MAIN++;
         maiN.main(args[0]);
         System.out.print(maiN.MAIN);
@@ -206,7 +206,7 @@ public class Sette {
                 solution: true
             },
             {
-                question: 'L\'ereditarietà multipla è ammessa per le interfacce.',
+                question: 'L\' ereditarietà multipla è ammessa per le interfacce.',
                 solution: true
             }
         ]

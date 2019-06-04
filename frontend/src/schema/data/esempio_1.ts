@@ -83,7 +83,8 @@ public class B extends SuperB {
             }
         },
         {
-            code: `public class Due {
+            code: `import java.util.*;
+public class Due {
     Collection<Due> s=new HashSet<Due>();
     static int k,j;
     Due(int k, int j) {this.k=k; this.j=j;}
@@ -98,8 +99,8 @@ public class B extends SuperB {
         for (Due x:s){System.out.print(x.k+" "+x.j);}
 } }`,
             solution: {
-                type: 'RUNTIME',
-                row: 10,
+                type: 'COMPILETIME',
+                row: 11,
                 cause: 'Un metodo statico non può accedere ai campi di istanza della stessa classe'
             }
         },
@@ -144,7 +145,8 @@ class Sette extends Sei {
             solution: ['6 7 7 C A A']
         },
         {
-            code: `public class Uno {
+            code: `import java.util.*;
+public class Uno {
     static Collection c=new HashSet();
     public static void main(String a[]) {
         Collection c=new LinkedList();

@@ -79,7 +79,8 @@ int main() {
             solution: ['60165']
         },
         {
-            code: `public class Test2 {
+            code: `import java.util.*;
+public class Test2 {
     public static void main(String[] args) {
         A[] a = new A[4];
         for (int i = 0; i < a.length; i++) {
@@ -124,7 +125,8 @@ class D extends C {}`,
             }
         },
         {
-            code: `public class Test6 {
+            code: `import java.util.*;
+public class Test6 {
     static final ArrayList<A> l = new ArrayList<>();
     void doSomething(int x) {
         for(int i=0; i<x; i++) {
@@ -155,7 +157,7 @@ class B extends A {
 }`,
             solution: {
                 type: 'COMPILETIME',
-                row: 12,
+                row: 13,
                 cause: 'Non si può usare l\'operatore ++ su un oggetto'
             }
         },
@@ -174,7 +176,7 @@ class A {
     void m(int x) { this.x += x; }
     public String toString() { return "x="+x; }
 }
-Class B {
+class B {
     A a;
     B(A a) { this.a = a; }
     B() { super(); }
@@ -183,7 +185,7 @@ Class B {
 }`,
             solution: {
                 type: 'RUNTIME',
-                row: 20,
+                row: 19,
                 cause: 'NullPointerException'
             }
         },

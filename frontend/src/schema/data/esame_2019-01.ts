@@ -95,7 +95,7 @@ class B extends A {
             code: `public class Test5 {
     public static void main(String[] args) {
         B b = new B();
-        A a b;
+        A a = b;
         J j = a;
         System.out.println(j.m(5) + b.m("ciccio"));
     }
@@ -119,7 +119,8 @@ class B extends A implements J {
             }
         },
         {
-            code: `public class Test6 {
+            code: `import java.util.*;
+public class Test6 {
     static final int N = 10;
     public static void main(String[] a) {
         Test6 t = new Test6();
@@ -133,7 +134,7 @@ class B extends A implements J {
         for(int i=0; i<2*N; i++)
             if (i%2==0) la.add(i);
         la.addAll(lb);
-        system.out.println(la.size());
+        System.out.println(la.size());
         Set<Integer> s = new HashSet<>();
         s.addAll(la);
         System.out.println(s.size());
@@ -142,13 +143,14 @@ class B extends A implements J {
             solution: ['20\\n15\\n']
         },
         {
-            code: `public class Test7 {
+            code: `import java.util.*;
+public class Test7 {
     public static void main(String[] args) {
         List<A> ls = new ArrayList<>();
         ls.add(new A("banana")); ls.add(new A("kiwi")); ls.add(new A("avocado"));
         Collections.sort(ls);
         for(A s: ls)
-            System.out.printin(a.s.length());
+            System.out.println(a.s.length());
     }
 }
 class A implements Comparable<A> {

@@ -68,7 +68,7 @@
           </p>
 
           <v-alert :value="true" outline type="warning" class="my-4">
-            <strong>È probabile che ci sia qualche errore nei testi o nelle soluzioni, potete scrivermi se li trovate dicendomi esame/esercizio/errore.</strong>
+            <strong>È probabile che ci sia qualche errore nei testi o nelle soluzioni, potete scrivermi se li trovate dicendomi esame/esercizio/errore</strong>
           </v-alert>
 
           <v-alert :value="true" outline type="error">
