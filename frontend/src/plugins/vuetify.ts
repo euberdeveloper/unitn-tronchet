@@ -4,4 +4,7 @@ import 'vuetify/src/stylus/app.styl';
 
 Vue.use(Vuetify, {
   iconfont: 'md',
+  icons: {
+    content_copy: 'content-copy'
+  }
 });
