@@ -62,8 +62,9 @@ export default class AppDrawer extends Vue {
 
   get items() {
     return [
-      { icon: 'description', text: 'Rules', link: '/rules' },
-      { icon: 'group', text: 'Advices', link: '/advices' },
+      /* { icon: 'description', text: 'Rules', link: '/rules' },
+      { icon: 'group', text: 'Advices', link: '/advices' }, */
+      { icon: 'home', text: 'Home', link: '/home' },
       {
         'icon': 'keyboard_arrow_up',
         'icon-alt': 'keyboard_arrow_down',
