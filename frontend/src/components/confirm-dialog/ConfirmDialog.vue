@@ -1,5 +1,5 @@
 <template>
-  <v-dialog v-model="dialog" width="400">
+  <v-dialog v-model="dialog" :persistent="persistent" width="400">
     <template v-slot:activator="{ on }">
       <slot :on="on">
         <!-- <v-btn color="red lighten-2" dark v-on="on">CONFERMA</v-btn> -->
@@ -51,6 +51,9 @@ export default class AppConfirmDialog extends Vue {
 
   @Prop({ type: Function, required: true })
   callback!: (answer: boolean) => void;
+
+  @Prop({ type: Boolean, default: false })
+  persistent!: boolean;
 
   @Prop({ type: Boolean })
   show!: boolean;
