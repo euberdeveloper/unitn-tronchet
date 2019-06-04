@@ -3,6 +3,14 @@
     <v-card class="home-card" flat>
       <v-card-text>
         <h1 class="home-title ma-1">Home</h1>
+
+        <v-img
+          class="mt-4 mb-5"
+          height="300"
+          contain
+          src="./read_the_fucking_manual.png"
+          gradient="to top right, rgba(100,115,201,.33), rgba(25,32,72,.7)" />
+
         <div class="home-paragraph ma-3 my-5">
           <p>
             Questo sito è stato pensato per aiutare gli studenti del
@@ -73,11 +81,12 @@
 </template>
 
 <script lang="ts">
-import Vue from "vue";
-import { Component, Prop, Watch, Emit } from "vue-property-decorator";
+import Vue from 'vue';
+import { Component, Prop, Watch, Emit } from 'vue-property-decorator';
 
 @Component
-export default class AppExamCard extends Vue {}
+export default class AppExamCard extends Vue {
+}
 </script>
 
 <style scoped>
@@ -98,5 +107,6 @@ export default class AppExamCard extends Vue {}
 
 .home-paragraph p {
   font-size: 16px;
+  text-align: justify;
 }
 </style>
