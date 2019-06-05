@@ -5,7 +5,7 @@
         <span>&copy; 2019 MIT License Copyright</span>
       </v-flex>
       <v-flex text-xs-center white--text xs6>
-        <span>Eugenio Berretta</span>
+        <span>Made with Vuetify</span>
       </v-flex>
     </v-layout>
   </v-footer>
