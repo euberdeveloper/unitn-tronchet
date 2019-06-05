@@ -17,7 +17,7 @@
             primo anno di informatica dell'
             <b>Università di Trento</b> a prepararsi
             per la parte teorica dell'esame
-            <b>Linguaggi di programmazione - modulo 2</b>.
+            <b>Linguaggi di programmazione - modulo 1</b>.
           </p>
 
           <p>
