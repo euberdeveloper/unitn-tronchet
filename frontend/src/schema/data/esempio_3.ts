@@ -207,7 +207,7 @@ public class Sette {
             },
             {
                 question: 'L\' ereditarietà multipla è ammessa per le interfacce.',
-                solution: true
+                solution: false
             }
         ]
     ]

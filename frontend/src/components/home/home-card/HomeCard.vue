@@ -28,7 +28,7 @@
           </p>
 
           <p>
-            Per fortuna su questo sito, andando sul menu e selezionando un esame, si possono vedere
+            Per fortuna su questo sito, andando sul <b>menu e selezionando un esame</b>, si possono vedere
             i testi delle prove vecchie trovate sul drive e controllarne anche le
             <b>soluzioni</b>. Non solo,
             questo sito permette all'utente di fare una vera e propria

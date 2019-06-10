@@ -157,7 +157,7 @@ class B extends A{
             },
             {
                 question: 'In Java esiste ereditarietà multipla.',
-                solution: true
+                solution: false
             },
             {
                 question: 'Java usa solo la heap perché tutta la memoria è allocata dinamicamente con le new().',
