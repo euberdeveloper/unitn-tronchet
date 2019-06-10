@@ -23,8 +23,13 @@ function correctTrueOrFalse(answer: FormAnswer, exercise: TrueOrFalseExercise, p
 }
 
 function correctCodeError(answer: FormAnswer, solution: ErrorSolution, points: number): number {
-    if (answer.type === solution.type && +answer.row === solution.row) {
-        return points;
+    if ((answer.type === 'COMPILETIME' || answer.type === 'RUNTIME') && +answer.row === solution.row) {
+        if (answer.type === solution.type) {
+            return points;
+        }
+        else {
+            return (3 * points) / 4;
+        }
     }
     else {
         return 0;
@@ -69,6 +74,7 @@ export enum Valutation {
     EMPTY,
     RIGHT,
     WRONG,
+    PARTIAL,
     NONE
 }
 
@@ -80,6 +86,8 @@ function isCodeExerciseCorrect(answer: FormAnswer, exercise: CodeExercise): Valu
         switch (correctCode(answer, exercise, 1)) {
             case 1:
                 return Valutation.RIGHT;
+            case 0.75:
+                return Valutation.PARTIAL;
             case 0:
                 return Valutation.WRONG;
             default:

@@ -115,7 +115,7 @@ export default class AppExamCard extends Vue {
       return {
         'success-card': this.isFinished && !this.showAnswers && this.valutation === Valutation.RIGHT,
         'empty-card': this.isFinished && !this.showAnswers && this.valutation === Valutation.EMPTY,
-        'warning-card': false,
+        'warning-card': this.isFinished && !this.showAnswers && this.valutation === Valutation.PARTIAL,
         'error-card': this.isFinished && !this.showAnswers && this.valutation === Valutation.WRONG
       };
     }

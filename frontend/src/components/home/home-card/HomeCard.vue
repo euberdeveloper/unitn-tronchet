@@ -60,16 +60,15 @@
           <p>
             Alla fine dell'esame viene mostrato il risultato, in termini di punteggio, tempo impiegato e percentuale di risposte corrette.
             Premendo sull'icona in alto a destra (non quella del logout) vengono rimostrati gli esercizi, che mostrano la risposta
-            data e la soluzione. Blu vuol dire che la risposta è stata lasciata vuota, rosso che era sbagliata e verde che era giusta.
-            Per vedere la soluzione basta premere l'icona con l'occhio.
+            data e la soluzione. Blu vuol dire che la risposta è stata lasciata vuota, rosso che era sbagliata, giallo che è stata sbagliata solo
+            la tipologia di errore (compiletime/runtime) e  verde che era giusta. Per vedere la soluzione basta premere l'icona con l'occhio.
           </p>
 
           <p>
             Viene assegnato un punto per gli esercizi col codice corretti, zero se essi sono sbagliati o vuoti. Viene assegnato un quarto
-            di punto per ogni vero e falso, viene tolto un quarto di punto per ognuno di essi che è stato sbagliato. Il professore ha
-            detto che se si sbaglia il tipo di errore (compiletime o runtime) ma è giusta la riga e la causa viene dato qualcosa meno di
-            un punto. Questo non accade nella simulazione ma considerando che nella correzione non viene controllata la causa dell'errore
-            le cose tornano in pari.
+            di punto per ogni vero e falso, viene tolto un quarto di punto per ognuno di essi che è stato sbagliato. Se si sbaglia il tipo di errore (compiletime o runtime) 
+            ma è giusta la riga vengono dati 0.75 punti (sarà così anche all'esame). Questo non accade nella simulazione ma considerando che nella correzione non viene
+            controllata la causa dell'errore le cose tornano in pari.
           </p>
 
           <v-alert :value="true" outline type="warning" class="my-4">
