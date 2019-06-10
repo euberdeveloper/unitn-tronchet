@@ -12,6 +12,11 @@
           gradient="to top right, rgba(100,115,201,.33), rgba(25,32,72,.7)" />
 
         <div class="home-paragraph ma-3 my-5">
+
+          <v-alert class="my-4" :value="true" outline type="error">
+            <strong>Questo sito è pensato per funzionare da computer. Se proprio non si può usare un computer, usare il telefono in modalità desktop o posizionarlo in orizzontale</strong>
+          </v-alert>
+
           <p>
             Questo sito è stato pensato per aiutare gli studenti del
             primo anno di informatica dell'
@@ -68,12 +73,13 @@
           </p>
 
           <v-alert :value="true" outline type="warning" class="my-4">
-            <strong>È probabile che ci sia qualche errore nei testi o nelle soluzioni, potete scrivermi se li trovate dicendomi esame/esercizio/errore</strong>
+            <strong>È possibile che ci sia qualche errore nei testi o nelle soluzioni, potete scrivermi se li trovate dicendomi esame/esercizio/errore</strong>
           </v-alert>
 
-          <v-alert :value="true" outline type="error">
-            <strong>Questo sito è pensato per funzionare da computer. Se proprio non si può usare un computer, usare il telefono in modalità desktop o posizionarlo in orizzontale</strong>
+          <v-alert :value="true" outline type="warning" class="my-4">
+            <strong>Negli esercizi dove si risponde con un output, scrivere \n per gli a capo e controllare anche che gli spazi siano giusti</strong>
           </v-alert>
+
         </div>
       </v-card-text>
     </v-card>
