@@ -58,7 +58,8 @@ public class E1 {
             }
         },
         {
-            code: `public class E6 {
+            code: `import java.util.*;
+public class E6 {
     static Collection ll = new LinkedList();
     int x=1;
     E6(int x){
@@ -81,7 +82,11 @@ class E6A extends E6 {
     public void f() {
         x++; super.f(); System.out.print(2);
 }}`,
-            solution: ['132']
+            solution: {
+                type: 'COMPILETIME',
+                row: 21,
+                cause: 'Costruttore di E6 non vuoto e non richiamato'
+            }
         },
         {
             code: `public class D {
