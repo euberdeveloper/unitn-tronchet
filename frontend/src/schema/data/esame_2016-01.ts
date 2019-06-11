@@ -50,7 +50,7 @@ public static void main(String arg[]) {
         return copia;
     }
     public int hashCode(){return 0;}
-    public boolean equas(Object x) {
+    public boolean equals(Object x) {
         if (! (x instanceof G)) return false;
         return k==((G)x).k;
     }

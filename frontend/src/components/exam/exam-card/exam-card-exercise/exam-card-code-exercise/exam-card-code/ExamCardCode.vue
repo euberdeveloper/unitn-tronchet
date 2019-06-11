@@ -1,27 +1,29 @@
 <template>
   <div>
     <v-fade-transition>
-      <v-sheet class="code d-flex grey--text text--lighten-3 pa-4" :color="background" @mouseenter="showCopy = true" @mouseleave="showCopy = false">
-        <v-fade-transition>
-          <v-btn v-if="showCopy" flat icon class="copy hidden-sm-and-down" color="success lighten-3" @click="copyCode">
-            <v-icon>content_copy</v-icon>
-          </v-btn>
-        </v-fade-transition>
-        
-        <v-layout column>
-          <v-flex
-            v-for="(row, index) of rows"
-            :key="index"
-            :class="getClass(index)"
-            @mouseenter="rowEntered(index)"
-            @mouseleave="rowLeft(index)"
-            @click="rowClicked(index)"
-          >
-            <span class="orange--text text--lighten-3 mr-3 code-row">{{ getRowText(index + 1) }}</span>
-            <span>{{ row }}</span>
-          </v-flex>
-        </v-layout>
-      </v-sheet>
+      <div class="code-container">
+        <v-sheet class="code d-flex grey--text text--lighten-3 pa-4" :color="background" @mouseenter="showCopy = true" @mouseleave="showCopy = false">
+          <v-fade-transition>
+            <v-btn v-if="showCopy" flat icon class="copy" color="success lighten-3" @click="copyCode">
+              <v-icon>content_copy</v-icon>
+            </v-btn>
+          </v-fade-transition>
+          
+          <v-layout column>
+            <v-flex
+              v-for="(row, index) of rows"
+              :key="index"
+              :class="getClass(index)"
+              @mouseenter="rowEntered(index)"
+              @mouseleave="rowLeft(index)"
+              @click="rowClicked(index)"
+            >
+              <span class="orange--text text--lighten-3 mr-3 code-row">{{ getRowText(index + 1) }}</span>
+              <span>{{ row }}</span>
+            </v-flex>
+          </v-layout>
+        </v-sheet>
+      </div>
     </v-fade-transition>
 
     <v-snackbar v-model="showSnackbar" color="success">
@@ -97,7 +99,12 @@ export default class AppExamCardCode extends Vue {
 </script>
 
 <style scoped>
+.code-container {
+  position: relative;
+}
+
 .code {
+  position: static;
   border-radius: 12px;
   overflow-x: auto;
   letter-spacing: 0.5px;

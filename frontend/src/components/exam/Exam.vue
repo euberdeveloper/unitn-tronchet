@@ -2,7 +2,7 @@
   <v-layout align-center justify-center>
     <v-flex xs11 sm10>
       <app-exam-card :key="exam"/>
-      <app-confirm-dialog :show="show" :callback="next" :type="type" persistent="true" @hide="$emit('hide')"/>
+      <app-confirm-dialog :show="show" :callback="next" :type="type" :persistent="true" @hide="$emit('hide')"/>
     </v-flex>
   </v-layout>
 </template>

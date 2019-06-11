@@ -119,7 +119,7 @@ const store = new Vuex.Store<StoreStatus>({
     inProgress: state => state.test.status === TestStatus.IN_PROGRESS,
     finished: state => state.test.status === TestStatus.FINISHED,
     totalScore: (_state, getters) => {
-      return getters.currentExam.exercises.reduce((acc, exercise) => acc + (instanceOfCodeExercise(exercise) ? getters.points.code : getters.points.trueOrFalse), 0);
+      return getters.currentExam.exercises.reduce((acc: number, exercise: Exercise) => acc + (instanceOfCodeExercise(exercise) ? getters.points.code : (exercise as TrueOrFalseExercise).length * getters.points.trueOrFalse), 0);
     }
   },
   mutations: {
