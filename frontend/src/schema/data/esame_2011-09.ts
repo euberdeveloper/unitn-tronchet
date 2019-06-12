@@ -125,7 +125,7 @@ public class B extends C{
         C αλθα = new C();
         αλθα.f();
     }}`,
-            solution: ['P\n']
+            solution: ['P\\n']
         },
         {
             code: `public class B {
