@@ -29,7 +29,7 @@ int x=3;
 F(int x) {
     f(x);
     f();
-    System.out.println(x);
+    System.out.print(x);
 }
 void f() { x++; System.out.print(x);}
 void f(int x) { this.x++; x--; System.out.print(x);}
