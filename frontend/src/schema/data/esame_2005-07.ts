@@ -108,7 +108,7 @@ public class A {
 public class A{
     static int f(int x) {x++; return x-1;}
     private int g(int x) {x--; return x+1;}
-    public static void main(String STring[]) {
+    public static void main(String String[]) {
         int z=3;
         System.out.println(f(z));
         System.out.println(g(z));

@@ -141,7 +141,7 @@ void f(int x) { this.x++; x--;System.out.print(x);}
 public static void main(String arg[]) {
     F x=new F(9);
 }}`,
-            solution: ['849']
+            solution: ['849\\n']
         },
         {
             code: `public class D {

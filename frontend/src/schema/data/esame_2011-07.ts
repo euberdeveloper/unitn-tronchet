@@ -56,29 +56,29 @@ public class B {
         },
         {
             code: `public class C {
-public static int x;
-C(int s) {x=s;}
-void f() {System.out.print(x);}
-public static void main(String a[]){
-    C b=new C(4);
-    C c=new C(1);
-    b.f();
-    c.f();
+    public static int x;
+    C(int s) {x=s;}
+    void f() {System.out.print(x);}
+    public static void main(String a[]){
+        C b=new C(4);
+        C c=new C(1);
+        b.f();
+        c.f();
 }   }`,
             solution: ['11']
         },
         {
             code: `public class E {
-static int s=0;
-E(int i){s=i;}
-public static void main(String[] args) {
-    E b1=new E(3);
-    E b2=new E(3);
-    E b3=new E(1);
-    if (b1.equals(b2)) System.out.print("K");
-        else System.out.print("I");
-    if (b1.s==b3.s) System.out.print("D");
-        else System.out.print("A");
+    static int s=0;
+    E(int i){s=i;}
+    public static void main(String[] args) {
+        E b1=new E(3);
+        E b2=new E(3);
+        E b3=new E(1);
+        if (b1.equals(b2)) System.out.print("K");
+            else System.out.print("I");
+        if (b1.s==b3.s) System.out.print("D");
+            else System.out.print("A");
 }   }`,
             solution: ['ID']
         },
@@ -130,16 +130,16 @@ int main() {
         },
         {
             code: `public class F{
-int x=2;
-F(int x) {
-    f(x);
-    f();
-    System.out.print(x);
-}
-void f() { x++; System.out.print(x);}
-void f(int x) { this.x++; x--;System.out.print(x);}
-public static void main(String arg[]) {
-    F x=new F(3);
+    int x=2;
+    F(int x) {
+        f(x);
+        f();
+        System.out.print(x);
+    }
+    void f() { x++; System.out.print(x);}
+    void f(int x) { this.x++; x--;System.out.print(x);}
+    public static void main(String arg[]) {
+        F x=new F(3);
 }}`,
             solution: ['243']
         },

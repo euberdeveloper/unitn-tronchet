@@ -45,7 +45,7 @@ public class Prova {
 }`,
             solution: {
                 type: 'COMPILETIME',
-                row: 13,
+                row: 15,
                 cause: 'Il costruttore di A è privato'
             }
         },
