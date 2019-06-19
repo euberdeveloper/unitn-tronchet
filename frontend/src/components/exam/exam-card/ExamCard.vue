@@ -174,13 +174,13 @@ export default class AppExamCard extends Vue {
   }
 
   back(event: any): void {
-    if (!(this.isFinished && !this.showAnswers) && !this.disableBack && this.isPhone && Math.abs(event.offsetX) > 200) {
+    if (!(this.isFinished && this.showScore) && !this.disableBack && this.isPhone && Math.abs(event.offsetX) > 200) {
       this.$store.dispatch('back');
     }
   }
 
   next(event: any): void {
-    if (!(this.isFinished && !this.showAnswers) && !this.disableNext && this.isPhone && Math.abs(event.offsetX) > 200) {
+    if (!(this.isFinished && this.showScore) && !this.disableNext && this.isPhone && Math.abs(event.offsetX) > 200) {
       this.$store.dispatch('next');
     }
   }
