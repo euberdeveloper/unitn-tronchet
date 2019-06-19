@@ -14,6 +14,14 @@
 
         <div class="home-paragraph my-5" :class="{ 'mx-1': isPhone, 'mx-3': !isPhone }">
 
+          <v-alert v-model="alerts.pwa" dismissible outline type="info" class="justify my-4">
+            <strong>
+              Ora Unitn Tronchet è diventata una PWA. Questo significa che puoi aggiungerla
+              alla schermata home di Android e che funziona anche offline. (Per provarla offline,
+              chiudere la scheda e riaprirla dopo aver disattivato la connessione)
+            </strong>
+          </v-alert>
+
           <p>
             Questo sito è stato pensato per aiutare gli studenti del
             primo anno di informatica dell'
@@ -95,6 +103,7 @@ export default class AppExamCard extends Vue {
   $vuetify: any;
 
   private alerts = {
+    pwa: true,
     errors: true,
     swipe: true,
     spaces: true
