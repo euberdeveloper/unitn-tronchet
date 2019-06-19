@@ -13,9 +13,6 @@
         />
 
         <div class="home-paragraph my-5" :class="{ 'mx-1': isPhone, 'mx-3': !isPhone }">
-          <v-alert class="justify my-4" v-model="alerts.platform" dismissible outline type="error">
-            <strong>Questo sito è pensato per funzionare da computer. Se proprio non si può usare un computer, usare il telefono in modalità desktop o posizionarlo in orizzontale</strong>
-          </v-alert>
 
           <p>
             Questo sito è stato pensato per aiutare gli studenti del
@@ -72,11 +69,15 @@
             controllata la causa dell'errore le cose tornano in pari.
           </p>
 
-          <v-alert  v-model="alerts.errors" dismissible outline type="warning" class="justify my-4">
+          <v-alert v-model="alerts.errors" dismissible outline type="warning" class="justify my-4">
             <strong>È possibile che ci sia qualche errore nei testi o nelle soluzioni, potete scrivermi se li trovate dicendomi esame, esercizio ed errore</strong>
           </v-alert>
 
-          <v-alert  v-model="alerts.spaces" dismissible outline type="warning" class="justify my-4">
+          <v-alert v-model="alerts.swipe" dismissible outline type="warning" class="justify my-4">
+            <strong>Nei telefoni, al posto delle frecce avanti e indietro basta fare uno swipe a destra o a sinistra</strong>
+          </v-alert>
+
+          <v-alert v-model="alerts.spaces" dismissible outline type="warning" class="justify my-4">
             <strong>Negli esercizi dove si risponde con un output, scrivere \n per gli a capo e controllare anche che gli spazi siano giusti</strong>
           </v-alert>
         </div>
@@ -94,8 +95,8 @@ export default class AppExamCard extends Vue {
   $vuetify: any;
 
   private alerts = {
-    platform: true,
     errors: true,
+    swipe: true,
     spaces: true
   };
 

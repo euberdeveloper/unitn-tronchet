@@ -1,8 +1,8 @@
 <template>
   <div
     v-touch="{
-      left: () => next(),
-      right: () => back()
+      left: (event) => next(event),
+      right: (event) => back(event)
     }"
   >
     <v-scale-transition>
@@ -173,14 +173,14 @@ export default class AppExamCard extends Vue {
     }, 1);
   }
 
-  back(): void {
-    if (!(this.isFinished && !this.showAnswers) && !this.disableBack && this.isPhone) {
+  back(event: any): void {
+    if (!(this.isFinished && !this.showAnswers) && !this.disableBack && this.isPhone && Math.abs(event.offsetX) > 200) {
       this.$store.dispatch('back');
     }
   }
 
-  next(): void {
-    if (!(this.isFinished && !this.showAnswers) && !this.disableNext && this.isPhone) {
+  next(event: any): void {
+    if (!(this.isFinished && !this.showAnswers) && !this.disableNext && this.isPhone && Math.abs(event.offsetX) > 200) {
       this.$store.dispatch('next');
     }
   }
