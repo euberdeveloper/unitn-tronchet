@@ -1,6 +1,6 @@
 <template>
     <v-form class="pa-4">
-      <v-radio-group class="radio-group-centered" :value="answerType" @change="setAnswerType($event)" row>
+      <v-radio-group :class="{ 'radio-group-centered': !isPhone }" :value="answerType" @change="setAnswerType($event)" :row="!isPhone">
         <v-radio value="" :color="radioColor.empty" @click="radioClicked('')">
           <template v-slot:label>
             <span @click.stop="radioClicked('')">Empty</span>
@@ -31,13 +31,13 @@
         :disabled="isFinished"
         v-model="answerOutput"
       />
-      <v-layout row v-if="isError">
-        <v-flex xs1>
+      <v-layout :column="isPhone" v-if="isError">
+        <v-flex xs12 sm1>
           <v-text-field type="number" label="Row" name="row" :disabled="isFinished" v-model="answerRow"/>
         </v-flex>
-        <v-flex xs11>
+        <v-flex xs12 sm11>
           <v-text-field
-            class="ml-3"
+            :class="{ 'ml-3': !isPhone }"
             type="text"
             label="Caused by"
             name="caused-by"
@@ -67,6 +67,11 @@ export default class AppExamCardCodeAnswer extends Vue {
 
   @Prop({ type: Boolean, required: true })
   showAnswers!: boolean;
+
+  $vuetify: any;
+  get isPhone(): boolean {
+    return this.$vuetify.breakpoint.name === 'xs';
+  }
 
   get answer(): FormAnswer {
     return this.$store.getters.currentAnswer;

@@ -6,6 +6,7 @@
       label="User"
       name="user"
       prepend-icon="person"
+      autocomplete="user"
       :rules="userRules"
       v-model="formValue.user"
       required
@@ -16,6 +17,7 @@
       name="password"
       label="Password"
       prepend-icon="lock"
+      autocomplete="current-password"
       :append-icon="passwordIcon"
       :rules="passwordRules"
       @click:append="showPassword = !showPassword"

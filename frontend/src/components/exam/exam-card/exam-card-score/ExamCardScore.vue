@@ -3,10 +3,10 @@
       <v-flex>
         <h1>{{ title }}</h1>
       </v-flex>
-      <v-flex pt-5 px-5>
+      <v-flex pt-5 :px-5="!isPhone" :px-2="isPhone">
         <v-layout column>
             <v-flex class="my-3">
-                <v-layout row>
+                <v-layout :row="!isPhone" :column="isPhone" :align-center="isPhone">
                     <v-flex xs12>
                         <strong>Tempo utilizzato:</strong>
                     </v-flex>
@@ -17,7 +17,7 @@
             </v-flex>
             <v-divider />
             <v-flex class="my-3">
-                <v-layout row>
+                <v-layout :row="!isPhone" :column="isPhone" :align-center="isPhone">
                     <v-flex xs12>
                         <strong>Percentuale tempo utilizzato:</strong>
                     </v-flex>
@@ -28,7 +28,7 @@
             </v-flex>
             <v-divider />
             <v-flex class="my-3">
-                <v-layout row>
+                <v-layout :row="!isPhone" :column="isPhone" :align-center="isPhone">
                     <v-flex xs12>
                         <strong>Punteggio:</strong>
                     </v-flex>
@@ -39,7 +39,7 @@
             </v-flex>
             <v-divider />
             <v-flex class="my-3">
-                <v-layout row>
+                <v-layout :row="!isPhone" :column="isPhone" :align-center="isPhone">
                     <v-flex xs12>
                         <strong>Percentuale punteggio:</strong>
                     </v-flex>
@@ -61,6 +61,11 @@ import { Outcome } from '../../../../valutation';
 
 @Component
 export default class AppExamCard extends Vue {
+  $vuetify: any;
+  get isPhone(): boolean {
+    return this.$vuetify.breakpoint.name === 'xs';
+  }
+
   get outcome(): Outcome {
     return this.$store.getters.outcome;
   }

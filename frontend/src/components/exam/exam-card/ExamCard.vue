@@ -1,5 +1,10 @@
 <template>
-  <div>
+  <div
+    v-touch="{
+      left: () => next(),
+      right: () => back()
+    }"
+  >
     <v-scale-transition>
       <v-card v-if="show" class="exam-card" :class="cardClass" flat>
         <v-toolbar dark height="55" color="primary">
@@ -16,10 +21,10 @@
 
         <v-card-text>
           <v-slide-y-transition mode="out-in">
-            <v-layout row pa-5 :key="current">
+            <v-layout row :class="{ 'py-3': true, 'pa-5': !isPhone }" :key="current">
               <v-flex xs12>
-                <app-exam-card-score v-if="isFinished && showScore" />
-                <app-exam-card-exercise v-else :showAnswers="showAnswers" />
+                <app-exam-card-score v-if="isFinished && showScore"/>
+                <app-exam-card-exercise v-else :showAnswers="showAnswers"/>
               </v-flex>
             </v-layout>
           </v-slide-y-transition>
@@ -28,7 +33,7 @@
         <v-card-actions>
           <v-layout row>
             <v-flex xs12 class="ma-3">
-              <app-exam-card-bottom />
+              <app-exam-card-bottom/>
             </v-flex>
           </v-layout>
         </v-card-actions>
@@ -58,12 +63,26 @@ import { Valutation, Outcome } from '../../../valutation';
   }
 })
 export default class AppExamCard extends Vue {
-
   show = false;
   showAnswers = false;
 
+  $vuetify: any;
+  get isPhone(): boolean {
+    return this.$vuetify.breakpoint.name === 'xs';
+  }
+
   get current(): number {
     return this.$store.state.test.exercise;
+  }
+
+  get exercisesAmount(): number {
+    return this.$store.getters.exercisesAmount;
+  }
+  get disableBack(): boolean {
+    return this.current <= 0;
+  }
+  get disableNext(): boolean {
+    return this.current >= this.exercisesAmount - 1;
   }
 
   get examName(): string {
@@ -71,7 +90,9 @@ export default class AppExamCard extends Vue {
   }
 
   get title(): string {
-    return this.isFinished && this.showScore ? this.examName : 'Esercizio ' + (this.current + 1);
+    return this.isFinished && this.showScore
+      ? this.examName
+      : 'Esercizio ' + (this.current + 1);
   }
 
   get isTrueOrFalse(): boolean {
@@ -88,8 +109,7 @@ export default class AppExamCard extends Vue {
   set showScore(value: boolean) {
     if (value) {
       this.$store.dispatch('showScore');
-    }
-    else {
+    } else {
       this.$store.dispatch('showSolutions');
     }
   }
@@ -108,15 +128,29 @@ export default class AppExamCard extends Vue {
         'success-card': this.isFinished && this.outcome === Outcome.GRANDE,
         'empty-card': this.isFinished && this.outcome === Outcome.PROMOSSO,
         'warning-card': this.isFinished && this.outcome === Outcome.BOCCIATO,
-        'error-card': this.isFinished && (this.outcome === Outcome.INDECENTE || this.outcome === Outcome.PESSIMO)
+        'error-card':
+          this.isFinished &&
+          (this.outcome === Outcome.INDECENTE ||
+            this.outcome === Outcome.PESSIMO)
       };
-    }
-    else {
+    } else {
       return {
-        'success-card': this.isFinished && !this.showAnswers && this.valutation === Valutation.RIGHT,
-        'empty-card': this.isFinished && !this.showAnswers && this.valutation === Valutation.EMPTY,
-        'warning-card': this.isFinished && !this.showAnswers && this.valutation === Valutation.PARTIAL,
-        'error-card': this.isFinished && !this.showAnswers && this.valutation === Valutation.WRONG
+        'success-card':
+          this.isFinished &&
+          !this.showAnswers &&
+          this.valutation === Valutation.RIGHT,
+        'empty-card':
+          this.isFinished &&
+          !this.showAnswers &&
+          this.valutation === Valutation.EMPTY,
+        'warning-card':
+          this.isFinished &&
+          !this.showAnswers &&
+          this.valutation === Valutation.PARTIAL,
+        'error-card':
+          this.isFinished &&
+          !this.showAnswers &&
+          this.valutation === Valutation.WRONG
       };
     }
   }
@@ -137,6 +171,18 @@ export default class AppExamCard extends Vue {
     setTimeout(() => {
       this.show = true;
     }, 1);
+  }
+
+  back(): void {
+    if (!(this.isFinished && !this.showAnswers) && !this.disableBack && this.isPhone) {
+      this.$store.dispatch('back');
+    }
+  }
+
+  next(): void {
+    if (!(this.isFinished && !this.showAnswers) && !this.disableNext && this.isPhone) {
+      this.$store.dispatch('next');
+    }
   }
 
   toggleShowAnswers(): void {

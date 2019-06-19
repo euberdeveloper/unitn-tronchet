@@ -5,15 +5,15 @@
         <h1 class="home-title ma-1">Home</h1>
 
         <v-img
-          class="mt-4 mb-5"
+          class="mt-4 mb-5" :class="{ 'mx-1': isPhone, 'mx-3': !isPhone }"
           height="300"
           contain
           src="./read_the_fucking_manual.png"
-          gradient="to top right, rgba(100,115,201,.33), rgba(25,32,72,.7)" />
+          gradient="to top right, rgba(100,115,201,.33), rgba(25,32,72,.7)"
+        />
 
-        <div class="home-paragraph ma-3 my-5">
-
-          <v-alert class="my-4" :value="true" outline type="error">
+        <div class="home-paragraph my-5" :class="{ 'mx-1': isPhone, 'mx-3': !isPhone }">
+          <v-alert class="justify my-4" v-model="alerts.platform" dismissible outline type="error">
             <strong>Questo sito è pensato per funzionare da computer. Se proprio non si può usare un computer, usare il telefono in modalità desktop o posizionarlo in orizzontale</strong>
           </v-alert>
 
@@ -33,7 +33,8 @@
           </p>
 
           <p>
-            Per fortuna su questo sito, andando sul <b>menu e selezionando un esame</b>, si possono vedere
+            Per fortuna su questo sito, andando sul
+            <b>menu e selezionando un esame</b>, si possono vedere
             i testi delle prove vecchie trovate sul drive e controllarne anche le
             <b>soluzioni</b>. Non solo,
             questo sito permette all'utente di fare una vera e propria
@@ -61,24 +62,23 @@
             Alla fine dell'esame viene mostrato il risultato, in termini di punteggio, tempo impiegato e percentuale di risposte corrette.
             Premendo sull'icona in alto a destra (non quella del logout) vengono rimostrati gli esercizi, che mostrano la risposta
             data e la soluzione. Blu vuol dire che la risposta è stata lasciata vuota, rosso che era sbagliata, giallo che è stata sbagliata solo
-            la tipologia di errore (compiletime/runtime) e  verde che era giusta. Per vedere la soluzione basta premere l'icona con l'occhio.
+            la tipologia di errore (compiletime/runtime) e verde che era giusta. Per vedere la soluzione basta premere l'icona con l'occhio.
           </p>
 
           <p>
             Viene assegnato un punto per gli esercizi col codice corretti, zero se essi sono sbagliati o vuoti. Viene assegnato un quarto
-            di punto per ogni vero e falso, viene tolto un quarto di punto per ognuno di essi che è stato sbagliato. Se si sbaglia il tipo di errore (compiletime o runtime) 
+            di punto per ogni vero e falso, viene tolto un quarto di punto per ognuno di essi che è stato sbagliato. Se si sbaglia il tipo di errore (compiletime o runtime)
             ma è giusta la riga vengono dati 0.75 punti (sarà così anche all'esame). Questo non accade nella simulazione ma considerando che nella correzione non viene
             controllata la causa dell'errore le cose tornano in pari.
           </p>
 
-          <v-alert :value="true" outline type="warning" class="my-4">
-            <strong>È possibile che ci sia qualche errore nei testi o nelle soluzioni, potete scrivermi se li trovate dicendomi esame/esercizio/errore</strong>
+          <v-alert  v-model="alerts.errors" dismissible outline type="warning" class="justify my-4">
+            <strong>È possibile che ci sia qualche errore nei testi o nelle soluzioni, potete scrivermi se li trovate dicendomi esame, esercizio ed errore</strong>
           </v-alert>
 
-          <v-alert :value="true" outline type="warning" class="my-4">
+          <v-alert  v-model="alerts.spaces" dismissible outline type="warning" class="justify my-4">
             <strong>Negli esercizi dove si risponde con un output, scrivere \n per gli a capo e controllare anche che gli spazi siano giusti</strong>
           </v-alert>
-
         </div>
       </v-card-text>
     </v-card>
@@ -91,6 +91,17 @@ import { Component, Prop, Watch, Emit } from 'vue-property-decorator';
 
 @Component
 export default class AppExamCard extends Vue {
+  $vuetify: any;
+
+  private alerts = {
+    platform: true,
+    errors: true,
+    spaces: true
+  };
+
+  get isPhone(): boolean {
+    return this.$vuetify.breakpoint.name === 'xs';
+  }
 }
 </script>
 
@@ -112,6 +123,10 @@ export default class AppExamCard extends Vue {
 
 .home-paragraph p {
   font-size: 16px;
+  text-align: justify;
+}
+
+.justify {
   text-align: justify;
 }
 </style>

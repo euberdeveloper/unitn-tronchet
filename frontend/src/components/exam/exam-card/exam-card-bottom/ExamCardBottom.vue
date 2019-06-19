@@ -3,7 +3,7 @@
     <app-confirm-dialog v-slot="{on}" :callback="confirmCallback" :type="confirmType">
 
       <v-bottom-nav v-show="!isFinished || !showScore" class="custom-button" color="primary" :value="true" absolute dark>
-        <v-btn color="white" :disabled="disableBack" @click="back" flat>
+        <v-btn color="white" v-if="!isPhone" :disabled="disableBack" @click="back" flat>
           <span>Back</span>
           <v-icon>chevron_left</v-icon>
         </v-btn>
@@ -23,7 +23,7 @@
           <v-icon>{{ toggleTimerLayout.icon }}</v-icon>
         </v-btn>
 
-        <v-btn color="white" :disabled="disableNext" @click="next" flat>
+        <v-btn color="white" v-if="!isPhone" :disabled="disableNext" @click="next" flat>
           <span>Next</span>
           <v-icon>chevron_right</v-icon>
         </v-btn>
@@ -49,6 +49,8 @@ import { ConfirmDialogType } from '../../../confirm-dialog/ConfirmDialog.enum';
 export default class AppExamCardBottom extends Vue {
 
   action: 'REFRESH' | 'FINISH' | 'REPEAT' = 'REFRESH';
+
+  $vuetify: any;
 
   get current(): number {
     return this.$store.state.test.exercise;
@@ -136,6 +138,10 @@ export default class AppExamCardBottom extends Vue {
     if (!this.disableNext) {
       this.$store.dispatch('next');
     }
+  }
+
+  get isPhone(): boolean {
+    return this.$vuetify.breakpoint.name === 'xs';
   }
 
 }

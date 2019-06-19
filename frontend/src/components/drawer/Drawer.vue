@@ -1,5 +1,5 @@
 <template>
-  <v-navigation-drawer class="pb-3" v-model="show" clipped fixed app>
+  <v-navigation-drawer class="pb-3" v-if="userLogged" v-model="show" clipped fixed app>
     <v-list dense>
 
       <template v-for="item in items">
@@ -94,6 +94,10 @@ export default class AppDrawer extends Vue {
 
   get currentExam(): number {
     return this.$store.state.test.exam;
+  }
+
+  get userLogged(): string {
+    return this.$store.getters.loggedIn;
   }
 
 }

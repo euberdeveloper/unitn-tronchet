@@ -4,12 +4,12 @@
       <v-layout column>
         <template v-for="(question, index) of exercise">
           <v-flex :key="index" :class="questionsClasses[index]">
-              <v-layout row align-center>
-                  <v-flex lg8 sm6>
+              <v-layout :row="!isPhone" :column="isPhone" :align-center="!isPhone">
+                  <v-flex xs12 sm6 lg8>
                       <span class="question">{{ question.question }}</span>
                   </v-flex>
-                  <v-flex lg4 sm6>
-                      <v-radio-group class="custom-radio-group" :value="radioBindings[index]" @change="setTrueOrFalse(index, $event)" row>
+                  <v-flex xs12 sm6 lg4>
+                      <v-radio-group :class="{ 'custom-radio-group': !isPhone }" :value="radioBindings[index]" @change="setTrueOrFalse(index, $event)" row>
                           <v-radio :value="true" :color="radioColor.true" @click="radioClicked(index, true)">
                             <template v-slot:label>
                               <span @click.stop="radioClicked(index, true)">Vero</span>
@@ -44,6 +44,11 @@ export default class AppExamCardTrueOrfalse extends Vue {
 
   @Prop({ type: Boolean, required: true })
   showAnswers!: boolean;
+
+  $vuetify: any;
+  get isPhone(): boolean {
+    return this.$vuetify.breakpoint.name === 'xs';
+  }
 
   get exercise(): TrueOrFalseExercise {
     return this.$store.getters.currentExercise;
@@ -93,8 +98,9 @@ export default class AppExamCardTrueOrfalse extends Vue {
         else {
             this.setTrueOrFalse(index, value);
         }
-    }
   }
+
+}
 
 </script>
 
