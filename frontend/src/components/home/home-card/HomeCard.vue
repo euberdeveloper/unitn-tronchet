@@ -74,7 +74,7 @@
           </v-alert>
 
           <v-alert v-model="alerts.swipe" dismissible outline type="warning" class="justify my-4">
-            <strong>Nei telefoni, al posto delle frecce avanti e indietro basta fare uno swipe a destra o a sinistra</strong>
+            <strong>Nei telefoni, al posto delle frecce avanti e indietro basta fare uno swipe ampio a destra o a sinistra</strong>
           </v-alert>
 
           <v-alert v-model="alerts.spaces" dismissible outline type="warning" class="justify my-4">

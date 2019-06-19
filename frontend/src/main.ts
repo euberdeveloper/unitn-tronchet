@@ -7,6 +7,7 @@ import store from './store';
 Vue.config.productionTip = false;
 
 import VueAnalytics from 'vue-analytics';
+import './registerServiceWorker'
 
 Vue.use(VueAnalytics, {
   id: 'UA-141587717-1',
