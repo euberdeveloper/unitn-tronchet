@@ -50,7 +50,19 @@
   "home": {
     "title": "Home",
     "paragraphs": {
-      "first": "This site has been done to help <b>UniTN</b> first-year computer-science students to prepare for the theoric part of <b>Programming Languages - module 1</b>'s exam."
+      "first": "This site has been done to help <b>UniTN</b> first-year computer-science students to prepare for the theoric part of <b>Programming Languages - module 1</b>'s exam.",
+      "second": "Unfortunately there are not the old exams on the teacher's site and the ones that could be find on the <b>Unitn Informatica</b> Drive mostly provide no solution.",
+      "third": "This is why I made this site, by <b>opening the menu and selecting an exam</b> you can see the old exams and also <b>check the solution</b>. And that is not all, this site allows the user to experience a real <b>simulation</b> of the exam, which ends after a certain amount of time and shows the result and the comparison between the given and the right answer.",
+      "fourth": "During the simulation (wich lasts 40 minutes) the current time is shown instead of the title of the toolbar and there is a coloured progress bar to better understand the amount of remaining time. In the exercise with code the user can keep the answer empty, answer with an output or with the row and the cause of an (compiltime or runtime) error. During the real exam, in most exercises, the student will be already aware if the code will generate an output or cause an error. Not during the simulation, because this will prepare the student to face the ones where that piece of information is not given. In the true-or-false exercises the user can either answer or keep the question empty.",
+      "fifth": "With the buttons on the bottom the user can navigate between the exercises. On the bottom, there are a button to pause and play the simulation, on to refresh the simulation and one to finish the simulation before the time ends. When the mouse is over a block of code, a button to copy the text will appear.",
+      "sixth": "When the simulation ends, a result in terms of used time, score and percentual used time and score will be displayed. By clicking on the top-right icon the user will be able to see the exercises again, with the given and the right answer. Blue means that the given answer is empty, red that it was wrong, yellow that only the type of error (compiletime - runtime) was wrong and green that it was right. To see the solution the user can click the top-right icon (the one with an eye).",
+      "seventh": "If an exercise with code is right the user will be given a point. If it is wrong or empty, zero points. If only the type of error is wrong (compiletime or runtime) then 0.75 points will be given. Unfortunately, the given cause to the error can not be checked by the site. Every true-or-false question gives 0.25 points if it is correct, 0 points if it is empty and -0.25 points if it is wrong."
+    },
+    "alerts": {
+      "pwa": "Unitn Tronchet has become now a PWA. This means it can be added on the home menu of an Android device and that it works even when offline. (To try it offline, close the tab and return to the index of this site after have disabled the internet connection)",
+      "errors": "There could be mistakes in the exercises' texts or in their solutions. You can write me by specifing also exam, exercise and error.",
+      "swipe": "If you are using a phon with portrait mode, being the back and next buttons disappeared, you have to (wide) swipe right and left to navigate between the exercises.",
+      "spaces": "In the output answers of exercises with code, write \\n for the newlines and do not forget any space."
     }
   }
 }
