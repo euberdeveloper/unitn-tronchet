@@ -21,6 +21,8 @@
     "output": "Output",
     "compiletime": "Compiletime",
     "runtime": "Runtime",
+    "row": "Row",
+    "caused_by": "Caused by",
     "true": "True",
     "false": "False",
     "used_time": "Used time:",
@@ -31,13 +33,14 @@
     "terrible": "Terrible",
     "not_passed": "Not passed",
     "passed": "Passed",
-    "excellent": "Excellent"
+    "excellent": "Excellent",
+    "repeat": "REPEAT"
   },
   "toast": {
     "close": "Close",
     "login": "Error in login",
     "logout": "Error in logout",
-    "copy": "Text copy on the clipboard!!!"
+    "copy": "Text copied on the clipboard!!!"
   },
   "confirm_dialog": {
     "yes": "YES",

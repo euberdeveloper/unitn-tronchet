@@ -21,6 +21,8 @@
     "output": "Output",
     "compiletime": "Compilazione",
     "runtime": "Esecuzione",
+    "row": "Riga",
+    "caused_by": "Causato da",
     "true": "Vero",
     "false": "Falso",
     "used_time": "Tempo utilizzato:",
@@ -31,7 +33,8 @@
     "terrible": "Pessimo",
     "not_passed": "Bocciato",
     "passed": "Passato",
-    "excellent": "Grandissimo"
+    "excellent": "Grandissimo",
+    "repeat": "RIPETI"
   },
   "toast": {
     "close": "Chiudi",

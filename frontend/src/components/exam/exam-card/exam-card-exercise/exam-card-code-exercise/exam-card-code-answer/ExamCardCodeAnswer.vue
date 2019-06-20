@@ -25,7 +25,7 @@
       <v-text-field
         v-if="isOutput"
         type="text"
-        label="Output"
+        :label="$t('exam.output')"
         name="output"
         append-icon="done"
         :disabled="isFinished"
@@ -33,13 +33,13 @@
       />
       <v-layout :column="isPhone" v-if="isError">
         <v-flex xs12 sm1>
-          <v-text-field type="number" label="Row" name="row" :disabled="isFinished" v-model="answerRow"/>
+          <v-text-field type="number" :label="$t('exam.row')" name="row" :disabled="isFinished" v-model="answerRow"/>
         </v-flex>
         <v-flex xs12 sm11>
           <v-text-field
             :class="{ 'ml-3': !isPhone }"
             type="text"
-            label="Caused by"
+            :label="$t('exam.caused_by')"
             name="caused-by"
             append-icon="warning"
             :disabled="isFinished"

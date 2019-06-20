@@ -29,7 +29,7 @@
         </v-btn>
       </v-bottom-nav>
 
-      <v-btn v-show="isFinished && showScore" block color="primary" round large @click="action = 'REPEAT'" v-on="on">RIPETI</v-btn>
+      <v-btn v-show="isFinished && showScore" block color="primary" round large @click="action = 'REPEAT'" v-on="on">{{ $t('exam.repeat') }}</v-btn>
 
     </app-confirm-dialog>
   </div>
