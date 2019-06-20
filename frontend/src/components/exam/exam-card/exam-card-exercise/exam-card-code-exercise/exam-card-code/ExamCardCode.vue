@@ -27,8 +27,8 @@
     </v-fade-transition>
 
     <v-snackbar v-model="showSnackbar" color="success">
-      <span>Testo copiato negli appunti!!!</span>
-      <v-btn dark flat @click="showSnackbar = false">Close</v-btn>
+      <span>{{ $t('toast.copy') }}</span>
+      <v-btn dark flat @click="showSnackbar = false">{{ $t('toast.close') }}</v-btn>
     </v-snackbar>
   </div>
 </template>

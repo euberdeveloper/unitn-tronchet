@@ -3,22 +3,22 @@
       <v-radio-group :class="{ 'radio-group-centered': !isPhone }" :value="answerType" @change="setAnswerType($event)" :row="!isPhone">
         <v-radio value="" :color="radioColor.empty" @click="radioClicked('')">
           <template v-slot:label>
-            <span @click.stop="radioClicked('')">Empty</span>
+            <span @click.stop="radioClicked('')">{{ $t('exam.empty') }}</span>
           </template>
         </v-radio>
         <v-radio value="OUTPUT" :color="radioColor.output" @click="radioClicked('OUTPUT')">
           <template v-slot:label>
-            <span @click.stop="radioClicked('OUTPUT')">Output</span>
+            <span @click.stop="radioClicked('OUTPUT')">{{ $t('exam.output') }}</span>
           </template>
         </v-radio>
         <v-radio value="COMPILETIME" :color="radioColor.compile" @click="radioClicked('COMPILETIME')">
           <template v-slot:label>
-            <span @click.stop="radioClicked('COMPILETIME')">Compiletime</span>
+            <span @click.stop="radioClicked('COMPILETIME')">{{ $t('exam.compiletime') }}</span>
           </template>
         </v-radio>
         <v-radio value="RUNTIME" :color="radioColor.runtime" @click="radioClicked('RUNTIME')">
           <template v-slot:label>
-            <span @click.stop="radioClicked('RUNTIME')">Runtime</span>
+            <span @click.stop="radioClicked('RUNTIME')">{{ $t('exam.runtime') }}</span>
           </template>
         </v-radio>
       </v-radio-group>
@@ -93,7 +93,7 @@ export default class AppExamCardCodeAnswer extends Vue {
 
   get answerOutput(): string {
     if (this.isFinished && this.showAnswers) {
-      return (this.solution as OutputSolution).join(' oppure ');
+      return (this.solution as OutputSolution).join(this.$root.$i18n.t('exam.or').toString());
     }
     else {
       return this.answer.output;

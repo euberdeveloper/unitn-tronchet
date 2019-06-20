@@ -21,8 +21,8 @@
 
       <v-card-actions class="pa-3">
         <v-spacer></v-spacer>
-        <v-btn color="primary" outline @click="action(true)">SI</v-btn>
-        <v-btn color="error" outline @click="action(false)">NO</v-btn>
+        <v-btn color="primary" outline @click="action(true)">{{ $t('confirm_dialog.yes') }}</v-btn>
+        <v-btn color="error" outline @click="action(false)">{{ $t('confirm_dialog.no') }}</v-btn>
         <v-spacer></v-spacer>
       </v-card-actions>
     </v-card>
@@ -63,13 +63,13 @@ export default class AppConfirmDialog extends Vue {
   get text(): string {
     switch (this.type) {
       case ConfirmDialogType.REFRESH:
-        return 'Sicuro di voler ricaricare l\'esame? Il tempo e le risposte inserite saranno resettate.';
+        return this.$root.$i18n.t('confirm_dialog.refresh').toString();
       case ConfirmDialogType.FINISH:
-        return 'Sicuro di voler finire l\'esame? Il tempo non è ancora terminato e non potrai più tornare indietro.';
+        return this.$root.$i18n.t('confirm_dialog.finish').toString();
       case ConfirmDialogType.REPEAT:
-        return 'Sicuro di voler ripetere l\'esame? Le precedenti risposte saranno resettate e non potrai più vedere il tuo risultato.';
+        return this.$root.$i18n.t('confirm_dialog.repeat').toString();
       case ConfirmDialogType.EXIT:
-        return 'Sicuro di voler uscire? Le risposte inserite saranno cancellate e non potrai più tornare indietro.';
+        return this.$root.$i18n.t('confirm_dialog.exit').toString();
     }
   }
 

@@ -4,7 +4,7 @@
       <v-card v-if="show" class="login-card" flat>
         <v-toolbar dark color="primary">
           <v-spacer/>
-          <v-toolbar-title>Log in</v-toolbar-title>
+          <v-toolbar-title>{{ $t('login.title') }}</v-toolbar-title>
           <v-spacer/>
         </v-toolbar>
 
@@ -19,7 +19,7 @@
             :disabled="!credentials || loading"
             :loading="loading"
             @click="login"
-          >LOGIN</v-btn>
+          >{{ $t('login.button') }}</v-btn>
           <v-spacer/>
         </v-card-actions>
       </v-card>
@@ -27,7 +27,7 @@
 
     <v-snackbar v-model="snackbar.show" :color="snackbar.color">
       <span>{{ snackbar.message }}</span>
-      <v-btn dark flat @click="snackbar.show = false">Close</v-btn>
+      <v-btn dark flat @click="snackbar.show = false">{{ $t('toast.close') }}</v-btn>
     </v-snackbar>
   </div>
 </template>
@@ -52,7 +52,7 @@ export default class AppLoginCard extends Vue {
   loading = false;
   snackbar = {
     show: false,
-    message: 'Error in login',
+    message:  this.$root.$i18n.t('toast.login'),
     color: 'error'
   };
 

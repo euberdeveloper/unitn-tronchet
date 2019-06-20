@@ -3,7 +3,7 @@
     <v-text-field
       class="mb-4"
       type="text"
-      label="User"
+      :label="userLabel"
       name="user"
       prepend-icon="person"
       autocomplete="user"
@@ -15,7 +15,7 @@
     <v-text-field
       :type="passwordType"
       name="password"
-      label="Password"
+      :label="passwordLabel"
       prepend-icon="lock"
       autocomplete="current-password"
       :append-icon="passwordIcon"
@@ -44,12 +44,19 @@ export default class AppLoginCardForm extends Vue {
   };
 
   userRules = [
-      v => !!v || 'User is required'
+      v => !!v || this.$root.$i18n.t('login.form.required', { what: this.userLabel })
   ];
 
   passwordRules = [
-      v => !!v || 'Password is required'
+      v => !!v || this.$root.$i18n.t('login.form.required', { what: this.passwordLabel })
   ];
+
+  get userLabel(): string {
+    return this.$root.$i18n.t('login.form.user').toString();
+  }
+  get passwordLabel(): string {
+    return this.$root.$i18n.t('login.form.password').toString();
+  }
 
   get passwordType(): 'text' | 'password' {
     return this.showPassword ? 'text' : 'password';

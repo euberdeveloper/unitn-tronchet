@@ -1,7 +1,7 @@
 <template>
   <v-layout align-center justify-center>
     <v-flex xs11 sm10 md6>
-      <h1>Not Found</h1>
+      <h1>{{ $t('not_found.title') }}</h1>
       <h2>{{ url }}</h2>
     </v-flex>
   </v-layout>

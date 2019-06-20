@@ -12,12 +12,12 @@
                       <v-radio-group :class="{ 'custom-radio-group': !isPhone }" :value="radioBindings[index]" @change="setTrueOrFalse(index, $event)" row>
                           <v-radio :value="true" :color="radioColor.true" @click="radioClicked(index, true)">
                             <template v-slot:label>
-                              <span @click.stop="radioClicked(index, true)">Vero</span>
+                              <span @click.stop="radioClicked(index, true)">{{ $t('exam.true') }}</span>
                             </template>
                           </v-radio> 
                           <v-radio label="Falso" :value="false" :color="radioColor.false" @click="radioClicked(index, false)" >
                             <template v-slot:label>
-                              <span @click.stop="radioClicked(index, false)">Falso</span>
+                              <span @click.stop="radioClicked(index, false)">{{ $t('exam.false') }}</span>
                             </template>
                           </v-radio>
                       </v-radio-group>

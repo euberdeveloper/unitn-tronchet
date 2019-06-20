@@ -8,7 +8,7 @@
             <v-flex class="my-3">
                 <v-layout :row="!isPhone" :column="isPhone" :align-center="isPhone">
                     <v-flex xs12>
-                        <strong>Tempo utilizzato:</strong>
+                        <strong>{{ $t('exam.used_time') }}</strong>
                     </v-flex>
                     <v-flex>
                         <span class="achived">{{ minutes }}:{{ seconds }}</span>
@@ -19,7 +19,7 @@
             <v-flex class="my-3">
                 <v-layout :row="!isPhone" :column="isPhone" :align-center="isPhone">
                     <v-flex xs12>
-                        <strong>Percentuale tempo utilizzato:</strong>
+                        <strong>{{ $t('exam.percentual_used_time') }}</strong>
                     </v-flex>
                     <v-flex>
                         <span class="achived">{{ usedTime }}%</span>
@@ -30,7 +30,7 @@
             <v-flex class="my-3">
                 <v-layout :row="!isPhone" :column="isPhone" :align-center="isPhone">
                     <v-flex xs12>
-                        <strong>Punteggio:</strong>
+                        <strong>{{ $t('exam.score') }}</strong>
                     </v-flex>
                     <v-flex>
                         <span class="achived">{{ score }} / {{ totalScore }}</span>
@@ -41,7 +41,7 @@
             <v-flex class="my-3">
                 <v-layout :row="!isPhone" :column="isPhone" :align-center="isPhone">
                     <v-flex xs12>
-                        <strong>Percentuale punteggio:</strong>
+                        <strong>{{ $t('exam.percentual_score') }}</strong>
                     </v-flex>
                     <v-flex>
                         <span class="achived">{{ percentualScore }}%</span>
@@ -73,15 +73,15 @@ export default class AppExamCard extends Vue {
   get title(): string {
     switch (this.outcome) {
       case Outcome.INDECENTE:
-        return 'Indecente';
+        return this.$root.$i18n.t('exam.hopeless').toString();
       case Outcome.PESSIMO:
-        return 'Pessimo';
+        return this.$root.$i18n.t('exam.terrible').toString();
       case Outcome.BOCCIATO:
-        return 'Bocciato';
+        return this.$root.$i18n.t('exam.not_passed').toString();
       case Outcome.PROMOSSO:
-        return 'Promosso';
+        return this.$root.$i18n.t('exam.passed').toString();
       case Outcome.GRANDE:
-        return 'Grandissimo';
+        return this.$root.$i18n.t('exam.excellent').toString();
     }
   }
 

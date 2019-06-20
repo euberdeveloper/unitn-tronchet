@@ -74,7 +74,7 @@ export default class AppExamCardBottom extends Vue {
   get toggleTimerLayout(): { icon: string; text: string; } {
     return {
       icon: (this.paused ? 'play_arrow' : 'pause'),
-      text: (this.paused ? 'Riprendi' : 'Pausa'),
+      text: (this.paused ? 'Play' : 'Pause'),
     };
   }
 

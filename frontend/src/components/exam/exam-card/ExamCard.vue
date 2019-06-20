@@ -92,7 +92,7 @@ export default class AppExamCard extends Vue {
   get title(): string {
     return this.isFinished && this.showScore
       ? this.examName
-      : 'Esercizio ' + (this.current + 1);
+      : this.$root.$i18n.t('exam.exercise').toString() + (this.current + 1);
   }
 
   get isTrueOrFalse(): boolean {

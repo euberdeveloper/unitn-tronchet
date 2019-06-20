@@ -1,0 +1,56 @@
+{
+  "not_found": {
+    "title": "Not Found"
+  },
+  "login": {
+    "title": "Log in",
+    "button": "LOGIN",
+    "form": {
+      "user": "User",
+      "password": "Password",
+      "required": "{what} is required"
+    }
+  },
+  "drawer": {
+    "exams": "Exams"
+  },
+  "exam": {
+    "exercise": "Exercise ",
+    "or": " or ",
+    "empty": "Empty",
+    "output": "Output",
+    "compiletime": "Compiletime",
+    "runtime": "Runtime",
+    "true": "True",
+    "false": "False",
+    "used_time": "Used time:",
+    "percentual_used_time": "Percentual used time:",
+    "score": "Score:",
+    "percentual_score": "Percentual score:",
+    "hopeless": "Hopeless",
+    "terrible": "Terrible",
+    "not_passed": "Not passed",
+    "passed": "Passed",
+    "excellent": "Excellent"
+  },
+  "toast": {
+    "close": "Close",
+    "login": "Error in login",
+    "logout": "Error in logout",
+    "copy": "Text copy on the clipboard!!!"
+  },
+  "confirm_dialog": {
+    "yes": "YES",
+    "no": "NO",
+    "refresh": "Are you sure you want to refresh the exam? Current time and answers will be lost.",
+    "finish": "Are you sure you want to finish the exam? Time is not finished and you will not be able to come back.",
+    "repeat": "Are you sure you want to repeat the exam? Current answers will be lost and you will not be able to see this result again.",
+    "exit": "Are you sure you want to exit? Current time and answers will be lost."
+  },
+  "home": {
+    "title": "Home",
+    "paragraphs": {
+      "first": "This site has been done to help <b>UniTN</b> first-year computer-science students to prepare for the theoric part of <b>Programming Languages - module 1</b>'s exam."
+    }
+  }
+}

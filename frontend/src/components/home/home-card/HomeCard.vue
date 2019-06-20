@@ -22,13 +22,7 @@
             </strong>
           </v-alert>
 
-          <p>
-            Questo sito è stato pensato per aiutare gli studenti del
-            primo anno di informatica dell'
-            <b>Università di Trento</b> a prepararsi
-            per la parte teorica dell'esame
-            <b>Linguaggi di programmazione - modulo 1</b>.
-          </p>
+          <p v-html="$t('home.paragraphs.first')"></p>
 
           <p>
             Purtroppo sul sito del professore non si trovano gli esami degli anni precedenti e

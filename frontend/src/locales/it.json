@@ -1,0 +1,56 @@
+{
+  "not_found": {
+    "title": "Non trovato"
+  },
+  "login": {
+    "title": "Accedi",
+    "button": "ACCEDI",
+    "form": {
+      "user": "Utente",
+      "password": "Password",
+      "required": "{what} è obbligatorio"
+    }
+  },
+  "drawer": {
+    "exams": "Esami"
+  },
+  "exam": {
+    "exercise": "Esercizio ",
+    "or": " oppure ",
+    "empty": "Vuoto",
+    "output": "Output",
+    "compiletime": "Compilazione",
+    "runtime": "Esecuzione",
+    "true": "Vero",
+    "false": "Falso",
+    "used_time": "Tempo utilizzato:",
+    "percentual_used_time": "Percentuale tempo utilizzato:",
+    "score": "Punteggio:",
+    "percentual_score": "Percentuale punteggio:",
+    "hopeless": "Indecente",
+    "terrible": "Pessimo",
+    "not_passed": "Bocciato",
+    "passed": "Passato",
+    "excellent": "Grandissimo"
+  },
+  "toast": {
+    "close": "Chiudi",
+    "login": "Errore di autentificazione",
+    "logout": "Error in logout",
+    "copy": "Testo copiato negli appunti!!!"
+  },
+  "confirm_dialog": {
+    "yes": "SI",
+    "no": "NO",
+    "refresh": "Sicuro di voler ricaricare l'esame? Il tempo e le risposte inserite saranno resettate.",
+    "finish": "Sicuro di voler finire l'esame? Il tempo non è ancora terminato e non potrai più tornare indietro.",
+    "repeat": "Sicuro di voler ripetere l'esame? Le precedenti risposte saranno resettate e non potrai più vedere il tuo risultato.",
+    "exit": "Sicuro di voler uscire? Le risposte inserite saranno cancellate e non potrai più tornare indietro."
+  },
+  "home": {
+    "title": "Home",
+    "paragraphs": {
+      "first": "Questo sito è stato pensato per aiutare gli studenti del primo anno di informatica dell' <b>Università di Trento</b> a prepararsi per la parte teorica dell'esame <b>Linguaggi di programmazione - modulo 1</b>."
+    }
+  }
+}

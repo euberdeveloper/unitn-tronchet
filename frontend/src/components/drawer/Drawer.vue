@@ -68,7 +68,7 @@ export default class AppDrawer extends Vue {
       {
         'icon': 'keyboard_arrow_up',
         'icon-alt': 'keyboard_arrow_down',
-        'text': 'Exams',
+        'text': this.$root.$i18n.t('drawer.exams'),
         'model': false,
         'children': this.exams.map((exam, index) => ({
           icon: 'create',

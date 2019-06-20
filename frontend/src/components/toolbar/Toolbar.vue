@@ -22,7 +22,7 @@
     
     <v-snackbar v-model="snackbar.show" :color="snackbar.color">
       <span>{{ snackbar.message }}</span>
-      <v-btn dark flat @click="snackbar.show = false">Close</v-btn>
+      <v-btn dark flat @click="snackbar.show = false">{{ $t('toast.close') }}</v-btn>
     </v-snackbar>
   </div>
 </template>
@@ -44,7 +44,7 @@ export default class AppToolbar extends Vue {
 
   snackbar = {
     show: false,
-    message: 'Error in logout',
+    message: this.$root.$i18n.t('toast.logout'),
     color: 'error'
   };
 
