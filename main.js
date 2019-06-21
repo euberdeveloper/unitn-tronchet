@@ -14,6 +14,15 @@ const DIST_FOLDER = path.join(__dirname, 'vuejs');
 
 const redirect = require('./utilities/redirect');
 
+const firebaseAdmin = require('firebase-admin');
+const serviceAccount = require('./utilities/firebase-credentials')();
+firebaseAdmin.initializeApp({
+    credential: firebaseAdmin.credential.cert(serviceAccount),
+    databaseURL: "https://unitn-tronchet.firebaseio.com"
+});
+const firebaseMessaging = firebaseAdmin.messaging();
+const PUBLIC_TOPIC = "public";
+
 app.use(compression());
 if (process.env.NODE_ENV === 'production') {
     app.use(redirect);
@@ -29,6 +38,13 @@ app.use(morgan('dev'));
 
 app.use(history());
 app.use(express.static(DIST_FOLDER));
+
+app.post('/api/register-token', (req, res) => {
+    const { token } = req.body;
+    firebaseMessaging.subscribeToTopic(token, PUBLIC_TOPIC)
+        .then(_ => res.status(200).send({ success: 'Token added succesfully to the topic'} ))
+        .catch(error => res.status(500).send({ message: 'Error in adding token to the topic', error }));
+});
 
 app.listen(PORT, () => {
     console.log('PORT ', PORT);

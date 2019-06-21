@@ -9,6 +9,8 @@
     "i18n:report": "vue-cli-service i18n:report --src './src/**/*.?(js|vue)' --locales './src/locales/**/*.json'"
   },
   "dependencies": {
+    "@types/axios": "^0.14.0",
+    "axios": "^0.19.0",
     "copy-to-clipboard": "^3.2.0",
     "core-js": "^2.6.5",
     "firebase": "^6.0.2",

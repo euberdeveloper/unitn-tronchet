@@ -2,15 +2,7 @@ import firebase, { User } from 'firebase/app';
 import 'firebase/auth';
 import { Store } from 'vuex';
 
-const config = {
-    apiKey: 'AIzaSyDiv4wmKQfkxqT4nt3BLf9XGC1lIxWMias',
-    authDomain: 'unitn-tronchet.firebaseapp.com',
-    databaseURL: 'https://unitn-tronchet.firebaseio.com',
-    projectId: 'unitn-tronchet',
-    storageBucket: 'unitn-tronchet.appspot.com',
-    messagingSenderId: '507166536810',
-    appId: '1:507166536810:web:c7ad30bbc2141c54'
-};
+import firebaseApp from './firebase';
 
 class FireAuth {
 
@@ -27,8 +19,8 @@ class FireAuth {
     private auth: firebase.auth.Auth;
     private store: Store<any & { user: User }>;
 
-    constructor(store: Store<any & { user: User }>) {
-        this.app = firebase.initializeApp(config);
+    constructor(app: firebase.app.App, store: Store<any & { user: User }>) {
+        this.app = app;
         this.auth = this.app.auth();
         this.store = store;
         this.onUserChanged();
@@ -58,7 +50,7 @@ class FireAuth {
 let auth: FireAuth;
 
 export function init(store: Store<any & { user: User }>) {
-    auth = new FireAuth(store);
+    auth = new FireAuth(firebaseApp, store);
 }
 
 export function get(): FireAuth {

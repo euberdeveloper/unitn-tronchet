@@ -3,6 +3,7 @@ import './plugins/vuetify';
 import App from './App.vue';
 import router from './router';
 import store from './store';
+import { initCloudMessaging } from './cloud-messaging';
 
 Vue.config.productionTip = false;
 
@@ -10,7 +11,7 @@ import VueAnalytics from 'vue-analytics';
 import './registerServiceWorker';
 import i18n from './plugins/i18n';
 
-console.log(i18n);
+initCloudMessaging();
 
 Vue.use(VueAnalytics, {
   id: 'UA-141587717-1',
