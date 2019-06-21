@@ -20,7 +20,7 @@ self.__precacheManifest = [
     "url": "/index.html"
   },
   {
-    "revision": "c0bf4def158588ed3238a22caaffe716",
+    "revision": "b43887b11b07735dff6d6e4e8941c15f",
     "url": "/firebase-messaging-sw.js"
   },
   {
