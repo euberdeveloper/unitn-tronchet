@@ -167,8 +167,8 @@ class C {
 }`,
             solution: {
                 type: 'COMPILETIME',
-                row: 14,
-                cause: 'Assegnamento errato perchè A non implementa J'
+                row: 13,
+                cause: 'Assegnamento errato perchè x è privata'
             }
         },
         {
