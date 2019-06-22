@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/precache-manifest.2830254ca6535f27c48a59a4a6e1561e.js"
+  "/precache-manifest.de9907a6d4184e36e8f3e51651bd0268.js"
 );
 
 workbox.core.setCacheNameDetails({prefix: "unitn-tronchet"});

@@ -16,9 +16,10 @@ const EXAM: Exam = {
 interface I {
     int m(int z);
 }
-interface J extends I {
+interface J extends I { }
+class A implements I {
     int x = 3;
-    public int m(int z) { return x + z; }
+    public in m(int z) { return x + z; }
 }
 class B extends A implements J {
     public int m(String s) { return s.length(); }
