@@ -26,7 +26,7 @@ class B extends A {
 class C extends B {
     C(int x) { super(++x); }
 }`,
-            solution: ['12\\n']
+            solution: ['12']
         },
         {
             code: `public class Test5 {
