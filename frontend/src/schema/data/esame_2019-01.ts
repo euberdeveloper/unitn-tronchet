@@ -162,7 +162,7 @@ class A implements Comparable<A> {
 }`,
             solution: {
                 type: 'COMPILETIME',
-                row: 7,
+                row: 8,
                 cause: 'a non è definito'
             }
         },
