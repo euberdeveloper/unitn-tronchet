@@ -8,15 +8,15 @@ self.__precacheManifest = [
     "url": "/read_the_fucking_manual.png"
   },
   {
-    "revision": "f4577a42045318c3127d",
+    "revision": "36800f0356065d9e7b2e",
     "url": "/js/chunk-vendors.6491e0ef.js"
   },
   {
-    "revision": "96b0c5ab612bfae2a9ab",
-    "url": "/js/app.59f14392.js"
+    "revision": "6391d466ac250cf63b53",
+    "url": "/js/app.49d4e40e.js"
   },
   {
-    "revision": "7a16c83744794f6e505a972f5eab00e7",
+    "revision": "9d7c69c97ea2bf4a48c2a1f1d06e43a6",
     "url": "/index.html"
   },
   {
@@ -28,11 +28,11 @@ self.__precacheManifest = [
     "url": "/favicon.png"
   },
   {
-    "revision": "f4577a42045318c3127d",
-    "url": "/css/chunk-vendors.de59559b.css"
+    "revision": "36800f0356065d9e7b2e",
+    "url": "/css/chunk-vendors.9ded5484.css"
   },
   {
-    "revision": "96b0c5ab612bfae2a9ab",
+    "revision": "6391d466ac250cf63b53",
     "url": "/css/app.9d13d228.css"
   }
 ];
