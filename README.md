@@ -46,3 +46,125 @@ To build the project:
 * On the root folder of the repo, execute `npm i` to download the node modules
 * The `main.local.js` file is the local server, without all Heroku trash. Without the decrypted firebase config file, push notification will not work. Run `node main.local` to run the local server.
 * With a browser, test the site on `http://localhost:8080`
+
+## Project structure:
+
+Made with [dree](https://github.com/euberdeveloper/dree)
+
+```
+unitn-tronchet
+ ├── firebase-decrypted.json
+ ├── firebase-encrypted.txt
+ ├─> frontend
+ │   ├── .browserslistrc
+ │   ├── .env
+ │   ├── babel.config.js
+ │   ├── package-lock.json
+ │   ├── package.json
+ │   ├── postcss.config.js
+ │   ├─> public
+ │   │   ├── favicon.ico
+ │   │   ├── favicon.png
+ │   │   ├── firebase-messaging-sw.js
+ │   │   ├─> img
+ │   │   │   └─> icons
+ │   │   ├── index.html
+ │   │   ├── manifest.json
+ │   │   ├── read_the_fucking_manual.png
+ │   │   └── robots.txt
+ │   ├── README.md
+ │   ├─> src
+ │   │   ├── App.vue
+ │   │   ├─> assets
+ │   │   │   └── content-copy.svg
+ │   │   ├── auth.ts
+ │   │   ├── cloud-messaging.ts
+ │   │   ├─> components
+ │   │   │   ├─> confirm-dialog
+ │   │   │   │   ├── ConfirmDialog.enum.ts
+ │   │   │   │   └── ConfirmDialog.vue
+ │   │   │   ├─> content
+ │   │   │   │   └── Content.vue
+ │   │   │   ├─> drawer
+ │   │   │   │   └── Drawer.vue
+ │   │   │   ├─> exam
+ │   │   │   │   ├─> exam-card
+ │   │   │   │   │   ├─> exam-card-bottom
+ │   │   │   │   │   │   └── ExamCardBottom.vue
+ │   │   │   │   │   ├─> exam-card-exercise
+ │   │   │   │   │   │   ├─> exam-card-code-exercise
+ │   │   │   │   │   │   │   ├─> exam-card-code
+ │   │   │   │   │   │   │   │   └── ExamCardCode.vue
+ │   │   │   │   │   │   │   ├─> exam-card-code-answer
+ │   │   │   │   │   │   │   │   └── ExamCardCodeAnswer.vue
+ │   │   │   │   │   │   │   └── ExamCardCodeExercise.vue
+ │   │   │   │   │   │   ├─> exam-card-true-or-false-exercise
+ │   │   │   │   │   │   │   └── ExamCardTrueOrFalseExercise.vue
+ │   │   │   │   │   │   └── ExamCardExercise.vue
+ │   │   │   │   │   ├─> exam-card-score
+ │   │   │   │   │   │   └── ExamCardScore.vue
+ │   │   │   │   │   └── ExamCard.vue
+ │   │   │   │   └── Exam.vue
+ │   │   │   ├─> footer
+ │   │   │   │   └── Footer.vue
+ │   │   │   ├─> home
+ │   │   │   │   ├─> home-card
+ │   │   │   │   │   └── HomeCard.vue
+ │   │   │   │   └── Home.vue
+ │   │   │   ├─> login
+ │   │   │   │   ├─> login-card
+ │   │   │   │   │   ├─> login-card-form
+ │   │   │   │   │   │   ├── credentials.interface.ts
+ │   │   │   │   │   │   └── LoginCardForm.vue
+ │   │   │   │   │   └── LoginCard.vue
+ │   │   │   │   └── Login.vue
+ │   │   │   ├─> not-found
+ │   │   │   │   └── NotFound.vue
+ │   │   │   └─> toolbar
+ │   │   │       ├─> state-bar
+ │   │   │       │   └── StateBar.vue
+ │   │   │       └── Toolbar.vue
+ │   │   ├── firebase.ts
+ │   │   ├─> locales
+ │   │   │   ├── en.json
+ │   │   │   └── it.json
+ │   │   ├── main.ts
+ │   │   ├─> plugins
+ │   │   │   ├── i18n.ts
+ │   │   │   └── vuetify.ts
+ │   │   ├── registerServiceWorker.ts
+ │   │   ├── router.ts
+ │   │   ├─> schema
+ │   │   │   ├─> data
+ │   │   │   │   ├── esame_2005-06.ts
+ │   │   │   │   ├── esame_2005-07.ts
+ │   │   │   │   └── exams.ts
+ │   │   │   └─> types
+ │   │   │       ├── answer.interface.ts
+ │   │   │       └── exam.interface.ts
+ │   │   ├── shims-tsx.d.ts
+ │   │   ├── shims-vue.d.ts
+ │   │   ├── store.ts
+ │   │   ├── valutation.ts
+ │   │   └─> views
+ │   │       ├── ExamView.vue
+ │   │       ├── HomeView.vue
+ │   │       ├── LoginView.vue
+ │   │       └── NotFound.vue
+ │   ├── tsconfig.json
+ │   ├── tslint.json
+ │   └── vue.config.js
+ ├── local.json
+ ├── main.js
+ ├── main.local.js
+ ├── package-lock.json
+ ├── package.json
+ ├── Procfile
+ ├── README.md
+ ├─> utilities
+ │   ├── firebase-credentials.js
+ │   ├── firebase-encryption.js
+ │   └── redirect.js
+ └─> vuejs
+```
+
