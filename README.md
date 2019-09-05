@@ -13,9 +13,17 @@ The UniTN's "Programming Languages" exam's theoric part consists in some code ex
 * Go to [https://unitn-tronchet.herokuapp.com](https://unitn-tronchet.herokuapp.com)
 * If it is the **first time** you use it, it could aks you for the **push notifications permission**, I suggest accepting, because you will receive a notification when a new exam is added or corrections are uploaded
 * To login, use the credentials: **USER: abbiamovinto** and **PASSWORD: defacto**
+![Login](https://github.com/euberdeveloper/unitn-tronchet/blob/master/doc/log-in.png)
 * After the login, you will be reditected to the **homepage**. I really suggest reading the whole text, because it will explain you how to properly use the site
+![Home](https://github.com/euberdeveloper/unitn-tronchet/blob/master/doc/home.png)
 * The topbar's left button opens the menu, where you can select an exam. The topbar's right button logs you out.
+![Menu](https://github.com/euberdeveloper/unitn-tronchet/blob/master/doc/menu.png)
+* Click on one of the exams to start a simulation
+
+![Usage mobile portrait](https://github.com/euberdeveloper/unitn-tronchet/blob/master/doc/usage-mobile-portrait.gif)
 * During the simulation, you will see the time as the title of the topbar. A progress bar will show the time too, and the color change in base of the time remained. To pass from an exercise to another **on mobilephones (portrait), you must make a big swipe to the right or to the left**; on landscape position or in all the other devices there are the back and next buttons, in the bottom. In the bottom there are also the pause/play button (pauses/plays time), the refresh button (resets the exams) and the finish button (finishes the exam before time ends). In the exercises with the code, by moving the cursor inside the code container, a copy button will appear to copy all the code text in the dashboard. You will be able to answer the code exercises (radio buttons for the output/compiletime error/runtime error choice and textfields for the output/error's row) or to leave the answer empty. For each true or false question, you will be able to select an answer and deselect it by clicking again on it. In the end of the simulation, the result will be shown; the title of the topbar will show your score, the progressbar and its color will get you a better idea of that. You will be able with the top right buttons to see the solution and your answers.
+
+![Usage](https://github.com/euberdeveloper/unitn-tronchet/blob/master/doc/usage.gif)
 
 ## How was it made:
 
