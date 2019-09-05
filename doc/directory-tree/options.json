@@ -1,0 +1,11 @@
+{
+    "exclude": [ 
+        "node_modules", 
+        "project-tree",
+        "git",
+        "frontend\\node_modules",
+        "frontend\\public\\img\\icons\\",
+        "doc",
+        "vuejs\\"
+    ]
+}

@@ -5,7 +5,7 @@
   "main": "main.js",
   "scripts": {
     "encrypt-firebase": "node utilities/firebase-encryption",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "directory-tree": "dree parse ./ -d ./doc/directory-tree -n project.tree -o ./doc/directory-tree/options.json"
   },
   "repository": {
     "type": "git",
