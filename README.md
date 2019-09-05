@@ -33,6 +33,10 @@ The UniTN's "Programming Languages" exam's theoric part consists in some code ex
   <img src="https://github.com/euberdeveloper/unitn-tronchet/blob/master/doc/usage.gif">
 </p>
 
+## As a PWA (Progressive Web App)
+
+Unitn Tronchet is also a PWA. This means that the site is cached and can be (partially) used even offline. On android devices the user is asked if he wants to add the site to the home screen, on mac os it can be added by the chrome menu.
+
 ## How was it made:
 
 The site's frontend has been made with **Vue.js** and **Typescript**, in particular by using the **Vuetify.js** ui framework. **vue-router** has been used for the routing, **Vuex** as the data store and a **service-worker** was added to make the site a **PWA**. With a **Firebase Cloud Messaging"**, if the user agrees when the site gets entered for the first time, I can send **Push Notifications** when for instance I add a new exam or fix a bug. The server was made with **Node.js**, it simply serves the site, hosted with **Heroku**.
