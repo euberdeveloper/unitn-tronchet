@@ -17,6 +17,7 @@ import Esame_2019_01 from './esame_2019-01';
 import Esame_2019_02 from './esame_2019-02';
 import Esame_2019_06 from './esame_2019-06';
 import Esame_2019_07 from './esame_2019-07';
+import Esame_Info_Org_2019_09 from './esame_info_org_2019-09';
 import Esempio_1 from './esempio_1';
 import Esempio_2 from './esempio_2';
 import Esempio_3 from './esempio_3';
@@ -39,6 +40,7 @@ const EXAMS: Exam[] = [
     Esame_2019_02,
     Esame_2019_06,
     Esame_2019_07,
+    Esame_Info_Org_2019_09,
     Esempio_1,
     Esempio_2,
     Esempio_3

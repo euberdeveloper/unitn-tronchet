@@ -221,7 +221,7 @@ class C2 extends B2 {}`,
                 solution: true
             },
             {
-                question: 'La parola cihave finally serve a terminare l\'esecuzione del programma.',
+                question: 'La parola chiave finally serve a terminare l\'esecuzione del programma.',
                 solution: false
             },
             {

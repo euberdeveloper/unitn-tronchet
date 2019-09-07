@@ -1,5 +1,6 @@
 import firebase from 'firebase';
 
+// Do not mess up with this
 const config = {
     apiKey: 'AIzaSyDiv4wmKQfkxqT4nt3BLf9XGC1lIxWMias',
     authDomain: 'unitn-tronchet.firebaseapp.com',

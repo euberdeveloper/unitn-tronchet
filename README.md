@@ -37,21 +37,22 @@ The UniTN's "Programming Languages" exam's theoric part consists in some code ex
 
 Unitn Tronchet is also a PWA. This means that the site is cached and can be (partially) used even offline. On android devices the user is asked if he wants to add the site to the home screen, on mac os it can be added by the chrome menu.
 
-## How was it made:
+## How was it made
 
 The site's frontend has been made with **Vue.js** and **Typescript**, in particular by using the **Vuetify.js** ui framework. **vue-router** has been used for the routing, **Vuex** as the data store and a **service-worker** was added to make the site a **PWA**. With a **Firebase Cloud Messaging"**, if the user agrees when the site gets entered for the first time, I can send **Push Notifications** when for instance I add a new exam or fix a bug. The server was made with **Node.js**, it simply serves the site, hosted with **Heroku**.
 
-## How to build it:
+## How to build it
 
 To build the project:
 
 * Install `Node.js`
 * Clone the repository
 * On the root folder of the repo, execute `npm i` to download the node modules
-* The `main.local.js` file is the local server, without all Heroku trash. Without the decrypted firebase config file, push notification will not work. Run `node main.local` to run the local server.
+* On the `frontend` folder of the repo, execute `npm i` and `npm run build` to build the frontend
+* The `main.local.js` file is the local server, without all Heroku trash. Without the decrypted firebase config file, push notification will not work. Run `node main.local` on the root folder to run the local server
 * With a browser, test the site on `http://localhost:8080`
 
-## Project structure:
+## Project structure
 
 Made with [dree](https://github.com/euberdeveloper/dree)
 
@@ -171,4 +172,3 @@ unitn-tronchet
  │   └── redirect.js
  └─> vuejs
 ```
-
