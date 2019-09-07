@@ -2,8 +2,6 @@ X-Permitted-Cross-Domain-Policies middleware
 ============================================
 [![Build Status](https://travis-ci.org/helmetjs/crossdomain.svg?branch=master)](https://travis-ci.org/helmetjs/crossdomain)
 
-[_Looking for a changelog?_](https://github.com/helmetjs/helmet/blob/master/HISTORY.md)
-
 The `X-Permitted-Cross-Domain-Policies` header tells some web clients (like Adobe Flash or Adobe Acrobat) your domain's policy for loading cross-domain content. See the description on [OWASP](https://www.owasp.org/index.php/OWASP_Secure_Headers_Project#X-Permitted-Cross-Domain-Policies) for more.
 
 Usage:
