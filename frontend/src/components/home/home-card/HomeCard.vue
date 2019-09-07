@@ -26,6 +26,7 @@
           <p v-html="$t('home.paragraphs.sixth')"></p>
           <p v-html="$t('home.paragraphs.seventh')"></p>
           <p v-html="$t('home.paragraphs.eight')"></p>
+          <p v-html="$t('home.paragraphs.ninth')"></p>
 
           <v-alert v-model="alerts.errors" dismissible outline type="warning" class="justify my-4">
             <strong>{{ $t('home.alerts.errors') }}</strong>
