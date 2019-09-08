@@ -1,6 +1,6 @@
 # unitn-tronchet
 
-## Project setup
+## Project setup 
 ```
 npm install
 ```
