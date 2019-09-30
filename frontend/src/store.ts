@@ -45,6 +45,7 @@ interface StoreStatus {
     answers: FormAnswer[];
     showScore: boolean;
     status: TestStatus;
+    fausto: boolean;
   };
   exams: Exam[];
 }
@@ -78,7 +79,8 @@ const store = new Vuex.Store<StoreStatus>({
       exercise: 0,
       answers: [],
       showScore: false,
-      status: TestStatus.NONE
+      status: TestStatus.NONE,
+      fausto: false
     },
     exams: EXAMS
   },
@@ -163,6 +165,13 @@ const store = new Vuex.Store<StoreStatus>({
     // Exam
     setCurrentExam: (state, value) => {
       state.test.exam = value;
+      // Italian Easter Egg
+      if (value === 0) {
+        state.test.fausto = true;
+      }
+      else {
+        state.test.fausto = false;
+      }
     },
     setCurrentExercise: (state, value) => {
       state.test.exercise = value;

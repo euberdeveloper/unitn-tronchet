@@ -17,7 +17,7 @@
                           </v-radio> 
                           <v-radio label="Falso" :value="false" :color="radioColor.false" @click="radioClicked(index, false)" >
                             <template v-slot:label>
-                              <span @click.stop="radioClicked(index, false)">{{ $t('exam.false') }}</span>
+                              <span @click.stop="radioClicked(index, false)">{{ fausto ? $t('exam.fausto') : $t('exam.false') }}</span>
                             </template>
                           </v-radio>
                       </v-radio-group>
@@ -48,6 +48,10 @@ export default class AppExamCardTrueOrfalse extends Vue {
   $vuetify: any;
   get isPhone(): boolean {
     return this.$vuetify.breakpoint.name === 'xs';
+  }
+
+  get fausto(): boolean {
+    return this.$store.state.test.fausto;
   }
 
   get exercise(): TrueOrFalseExercise {
