@@ -40,6 +40,10 @@ export default class AppExam extends Vue {
       this.$store.dispatch('startExam', this.exam);
     }
   }
+  
+  get user() {
+    return this.$store.state.user;
+  }
 
   created() {
     this.$store.dispatch('hideFooter');

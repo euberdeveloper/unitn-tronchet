@@ -30,6 +30,10 @@ export default class Exam extends Vue {
     return ConfirmDialogType.EXIT;
   }
 
+  get user() {
+    return this.$store.state.user;
+  }
+
   beforeRouteLeave(to, from, next) {
     this.exit(next);
   }
@@ -39,8 +43,13 @@ export default class Exam extends Vue {
   }
 
   exit(next: (answer: boolean) => void): void {
-    this.show = true;
-    this.next = next;
+    if (this.user) {
+      this.show = true;
+      this.next = next;
+    }
+    else {
+      next(true);
+    }
   }
 }
 </script>
