@@ -1,11 +1,15 @@
 {
   "name": "unitn-tronchet",
-  "version": "1.0.0",
-  "description": "Site to simulate theoric part of unitn informatica course 'Linguaggi di programmazione - modulo 2'",
+  "version": "1.1.0",
+  "description": "A webapp to prepare for the UNITN Java theoric exam",
   "main": "main.js",
   "scripts": {
-    "encrypt-firebase": "node utilities/firebase-encryption",
-    "directory-tree": "dree parse ./ -d ./doc/directory-tree -n project.tree -o ./doc/directory-tree/options.json"
+    "build:frontend": "cd vuejs && npm run build",
+    "start": "node main.local",
+    "start:prod": "node main"
+  },
+  "directories": {
+    "doc": "doc"
   },
   "repository": {
     "type": "git",
@@ -23,8 +27,8 @@
     "connect-history-api-fallback": "^1.6.0",
     "cors": "^2.8.5",
     "express": "^4.17.1",
-    "firebase-admin": "^8.5.0",
-    "helmet": "^3.21.0",
+    "firebase-admin": "^8.9.1",
+    "helmet": "^3.21.2",
     "morgan": "^1.9.1"
   }
 }

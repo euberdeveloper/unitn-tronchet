@@ -10,7 +10,7 @@ const express = require('express');
 const app = express();
 
 const PORT = process.env.PORT || 8080;
-const DIST_FOLDER = path.join(__dirname, 'vuejs');
+const DIST_FOLDER = path.join(__dirname, 'frontend');
 
 const redirect = require('./utilities/redirect');
 
