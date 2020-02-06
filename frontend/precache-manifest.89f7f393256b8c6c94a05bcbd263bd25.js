@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "0e0b8ffdea0a3070b8f1",
+    "revision": "f306ae0d0326e960620c",
     "url": "/css/app.0ec482f5.css"
   },
   {
@@ -32,12 +32,12 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/img/assets/read_the_fucking_manual.png"
   },
   {
-    "revision": "ec15adf1b696ab91f4491b6e8fb52524",
+    "revision": "e1f7df0ad3b0be92e3f58c56542d1422",
     "url": "/index.html"
   },
   {
-    "revision": "0e0b8ffdea0a3070b8f1",
-    "url": "/js/app.04b7fd74.js"
+    "revision": "f306ae0d0326e960620c",
+    "url": "/js/app.f8c07531.js"
   },
   {
     "revision": "8c5487a7ff7bf1fbef76",

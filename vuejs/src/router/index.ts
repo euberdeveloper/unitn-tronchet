@@ -16,23 +16,23 @@ export default new Router({
       path: '/exam/:exam',
       name: 'exam',
       props: route => ({ exam: route.params.exam }),
-      component: () => Exam()
+      component: Exam
     },
     {
       path: '/login',
       name: 'login',
-      component: () => Login()
+      component: Login
     },
     {
       path: '/home',
       name: 'home',
-      component: () => Home()
+      component: Home
     },
     {
       path: '*',
       name: 'not-found',
       props: route => ({ url: route.path }),
-      component: () => NotFound()
+      component: NotFound
     }
   ]
 });
