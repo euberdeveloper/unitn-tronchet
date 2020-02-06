@@ -1,10 +1,10 @@
 import Vue from 'vue';
 import Router from 'vue-router';
 
-import Exam from '@/views/ExamView.vue';
-import Home from '@/views/HomeView.vue';
-import Login from '@/views/LoginView.vue';
-import NotFound from '@/views/NotFound.vue';
+const Exam = () => import('@/views/ExamView.vue');
+const Home = () => import('@/views/HomeView.vue');
+const Login = () => import('@/views/LoginView.vue');
+const NotFound = () => import('@/views/NotFound.vue');
 
 Vue.use(Router);
 
@@ -16,23 +16,23 @@ export default new Router({
       path: '/exam/:exam',
       name: 'exam',
       props: route => ({ exam: route.params.exam }),
-      component: Exam
+      component: () => Exam()
     },
     {
       path: '/login',
       name: 'login',
-      component: Login
+      component: () => Login()
     },
     {
       path: '/home',
       name: 'home',
-      component: Home
+      component: () => Home()
     },
     {
       path: '*',
       name: 'not-found',
       props: route => ({ url: route.path }),
-      component: NotFound
+      component: () => NotFound()
     }
   ]
 });
