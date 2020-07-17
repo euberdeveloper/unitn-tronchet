@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "f306ae0d0326e960620c",
+    "revision": "ec8e4ff7c32dcf99be9c",
     "url": "/css/app.0ec482f5.css"
   },
   {
@@ -12,7 +12,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/css/chunk-3dc2ba00.87fda8d1.css"
   },
   {
-    "revision": "4a860153a95dfe35a9c3",
+    "revision": "0d5379909a0e0e813154",
     "url": "/css/chunk-77b5a4ce.5faac51c.css"
   },
   {
@@ -32,12 +32,12 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/img/assets/read_the_fucking_manual.png"
   },
   {
-    "revision": "e1f7df0ad3b0be92e3f58c56542d1422",
+    "revision": "a0587b14b2c06e88afafa35ecdacfeff",
     "url": "/index.html"
   },
   {
-    "revision": "f306ae0d0326e960620c",
-    "url": "/js/app.f8c07531.js"
+    "revision": "ec8e4ff7c32dcf99be9c",
+    "url": "/js/app.f165b232.js"
   },
   {
     "revision": "8c5487a7ff7bf1fbef76",
@@ -56,8 +56,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/js/chunk-3dc2ba00.54ca73ed.js"
   },
   {
-    "revision": "4a860153a95dfe35a9c3",
-    "url": "/js/chunk-77b5a4ce.2beb1f3d.js"
+    "revision": "0d5379909a0e0e813154",
+    "url": "/js/chunk-77b5a4ce.97aa7247.js"
   },
   {
     "revision": "d18afc5fafd0a57612bc",
