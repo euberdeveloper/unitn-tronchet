@@ -48,7 +48,7 @@ class B {
     void m(int x) { a.m(x); }
     public String toString() { return a.toString(); }
 }`,
-            solution: ['x=8']
+            solution: ['x=8\\n']
         },
         {
             code: `public class Test {
@@ -77,7 +77,7 @@ class A implements I {
 class B extends A implements J {
     public int m(String s) { return s.length(); }
 }`,
-            solution: ['18']
+            solution: ['18\\n']
         },
         {
             code: `import java.util.*;
@@ -98,7 +98,7 @@ class B extends A implements J {
          return (s.length() - a.s.length());
      }
  }`,
-            solution: ['3\n8\n11\n']
+            solution: ['3\\n8\\n11\\n']
         },
         {
             code: `public class Test {
@@ -137,7 +137,7 @@ class B extends A {
 }
 class C { }
 class D extends C { }`,
-            solution: ['h']
+            solution: ['h\\n']
         },
         {
             code: `public class Test {
