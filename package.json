@@ -27,7 +27,7 @@
     "connect-history-api-fallback": "^1.6.0",
     "cors": "^2.8.5",
     "express": "^4.17.1",
-    "firebase-admin": "^8.9.1",
+    "firebase-admin": "^11.4.1",
     "helmet": "^3.21.2",
     "morgan": "^1.9.1"
   }
