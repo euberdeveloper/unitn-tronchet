@@ -5,7 +5,7 @@
 
 Site where there are simulations of the theoric part of unitn exam "linguaggi di programmazione - mod 1".
 
-__link to the site:__ [https://unitn-tronchet.herokuapp.com](https://unitn-tronchet.herokuapp.com)
+__link to the site:__ [https://unitn-tronchet.euber.dev](https://unitn-tronchet.euber.dev)
 
 ## Project purpose:
 
@@ -13,7 +13,7 @@ The UniTN's "Programming Languages" exam's theoric part consists in some code ex
 
 ## How to use it:
 
-* Go to [https://unitn-tronchet.herokuapp.com](https://unitn-tronchet.herokuapp.com)
+* Go to [https://unitn-tronchet.euber.dev](https://unitn-tronchet.euber.dev)
 * If it is the **first time** you use it, it could aks you for the **push notifications permission**, I suggest accepting, because you will receive a notification when a new exam is added or corrections are uploaded
 * To login, use the credentials: **USER: abbiamovinto** and **PASSWORD: defacto**
 
